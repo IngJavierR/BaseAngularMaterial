@@ -1,4 +1,5 @@
-<div layout="column" flex="90">
+<div layout="column" ng-cloak>
+  <md-content layout-padding>
   <div class="jumbotron">
     <h1>'Allo, 'Allo!</h1>
     <p class="lead">
@@ -8,18 +9,27 @@
     <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
   </div>
 
-  <div class="row marketing">
-    <h4>HTML5 Boilerplate {{main.awesomeThings[1]}}</h4>
-    <p>
-      HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-    </p>
-
-    <h4>Angular</h4>
-    <p>
-      AngularJS is a toolset for building the framework most suited to your application development.
-    </p>
-
-    <h4>Karma</h4>
-    <p>Spectacular Test Runner for JavaScript.</p>
-  </div>
+  <form name="projectForm">
+    <md-input-container class="md-block">
+        <label>Description</label>
+        <input md-maxlength="30" required md-no-asterisk name="description" ng-model="project.description">
+        <div ng-messages="projectForm.description.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+        <label>Client Email</label>
+        <input required type="email" name="clientEmail" ng-model="project.clientEmail"
+               minlength="10" maxlength="100"/>
+        <div ng-messages="projectForm.clientEmail.$error" role="alert">
+          <div ng-message-exp="['required', 'minlength', 'maxlength']">
+            Your email must be between 10 and 100 characters long and look like an e-mail address.
+          </div>
+        </div>
+    </md-input-container>
+    <div>
+        <md-button class="md-raised md-primary" ng-disabled="projectForm.$invalid">Enviar</md-button>
+    </div>
+  </form>
+</md-content>
 </div>
