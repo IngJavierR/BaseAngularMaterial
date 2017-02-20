@@ -1,0 +1,23 @@
+= AngularJs
+Doc Writer Javier Rodriguez
+:doctype: book
+:source-highlighter: coderay
+:listing-caption: Listing
+
+Se describe el proceso para trabajar con el proyecto angular basado en node.
+
+== Agregando dependencias
+
+Para agregar una dependencia al proyecto, debemos colocarnos en la ruta donde se
+encuentran los archivos del proyecto y ejecutar:
+
+----
+bower install [dependencia] --save
+Ejemplo: bower install angular-material --save
+----
+[[img-sunset]]
+.bower install
+image::assets/bower_install_angular_material.png[bower install, align="center"]
+
+* Esto decargara las referencias de angular material, registrará la dependencia en
+el archivo bower.json y en el archivo index.html

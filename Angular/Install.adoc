@@ -1,0 +1,104 @@
+= AngularJs
+Doc Writer Javier Rodriguez
+:doctype: book
+:source-highlighter: coderay
+:listing-caption: Listing
+
+Se describe el proceso para crear un ambiente angular y para levantar uno
+existente.
+
+== Generar un ambiente de cero
+La construcción del proyecto se lleva a cabo por medio de un generador de
+proyectos basado en nodejs: link:http://yeoman.io[Yeoman].
+
+Para lo cual se necesita tener instalado en nuestro equipo el siguiente Software:
+
+* link:https://nodejs.org/es/[NodeJs] Versión 7.5 o mas actual.
+* link:https://rubyinstaller.org/downloads/[Ruby] Versión Ruby 2.2.6.
+* link:https://git-scm.com[Git] Versión mas actual.*
+* link:https://atom.io[Atom] Interprete ligero desarrollado en node.
+
+NOTE: * Instalar git y agregar la ruta al PATH C:\Program Files\Git\bin
+
+Una vez instalado todo el software requerido se ejecutan los siguientes comandos
+en una consola de windows.
+
+* Instala herramientas de compilación y control de recursos (grunt, bower)
+----
+npm install -g grunt-cli bower yo generator-karma generator-angular
+----
+* Instala herramienta para procesamiento de estilos con Sass. (opcional)
+----
+gem install compass
+----
+
+Para crear un ambiente angular basta con ejecutar la instrucción:
+----
+yo angular [app-name]
+----
+Donde: *app-name*, es el nombre que llevará nuestra aplicación. (opcional)
+
+NOTE: Todos las instruciones se ejecutan en los ambientes globales de Node,
+es decir, no afectan a la ruta donde este localizado al ejecutarlos, excepto
+la instrucción de generación del proyecto, ya que esta generará los archivos de
+la aplicación justo donde se encuetre localizado en ese momento.
+
+Dentro de la ruta donde nos hayamos encontrado al ejecutar la última instrucción
+se generará la siguientes estructura de archivos:
+
+----
+app/
+      bower.json
+      Gruntfile.js
+node_modules/
+      package.json
+      README.md
+test/
+----
+Donde: +
+  [app/]: Es el directorio donde se encuentra la aplicación, html, css, js. +
+  [node_modules/]: Es el directorio donde se encuentran los archivos locales de
+  node. +
+  [test/]: Se encuentra los archivos necesarios para la generación de pruebas
+  unitarias. +
+  [bower.json]: Se encuentra la configuración de las dependencias de javascript. +
+  [Gruntfile.js]: Se encuentra la configuración del ejecutor de tareas de la
+  aplicación. +
+  [package.json]: Se encuentra la configuración de las dependencias de node. +
+  [README.md]: Archivo en MarkDown para la descripción del proyecto.
+
+== Levantar ambiente
+
+Antes de levantar el ambiente, y sabiendo que es un proyecto colaborativo, donde
+cualquier otra persona pudo agregar dependencias al proyecto, es necesario
+ejecutar las siguientes instrucciones posicionandonos en la ruta donde se
+encuentran los archivos del proyecto.
+
+----
+npm install
+bower install
+----
+
+Ya que esto nos va a asegurar que se hayan descargado las ultimas dependencias
+que alguien mas hubiera podido agregar.
+
+Para levantar el ambiente únicamente ejecutamos en consola la siguiente
+instrucción:
+
+----
+grunt serve
+----
+
+Esto ejecutará las tareas de grunt y compilará los js, levantará un servidor
+de aplicaciones y mostrara la aplicación en el navegador que tengamos como
+default.
+
+Todos los cambios que se hagan en código serán refrescados en automático por el
+navegador sin tener que deployar nuevamente la aplicación, solo con guardar los
+archivos modificados.
+
+Para cerrar el ambiente de grunt, basta con ejecutar la instrucción:
+
+----
+Ctrl + C
+----
