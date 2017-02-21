@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
 
   angular.module('demoApp')
@@ -8,8 +8,8 @@
   function capitalize() {
     return {
       require: 'ngModel',
-      link: function (scope, element, attrs, modelCtrl) {
-        var capitalize = function (inputValue) {
+      link: function(scope, element, attrs, modelCtrl) {
+        var capitalize = function(inputValue) {
           if (inputValue === undefined) {
             inputValue = '';
           }
@@ -24,7 +24,7 @@
           return capitalized;
         };
         modelCtrl.$parsers.push(capitalize);
-        capitalize(scope[attrs.ngModel]);  // capitalize initial value
+        capitalize(scope[attrs.ngModel]); // capitalize initial value
       }
     };
   }

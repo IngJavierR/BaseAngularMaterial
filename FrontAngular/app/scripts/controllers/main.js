@@ -1,25 +1,25 @@
 (function() {
   'use strict';
 
-/**
- * @ngdoc function
- * @name demoApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the demoApp
- */
-angular.module('demoApp').
+  /**
+   * @ngdoc function
+   * @name demoApp.controller:MainCtrl
+   * @description
+   * # MainCtrl
+   * Controller of the demoApp
+   */
+  angular.module('demoApp').
   controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$scope'];
+  MainCtrl.$inject = ['$scope'];
 
-function MainCtrl(){
-  var vm = this;
-  vm.awesomeThings =[
-    'HTML5 Boilerplate',
-    'AngularJS',
-    'Karma'
-  ];
-}
+  function MainCtrl() {
+    var vm = this;
+    vm.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+  }
 
 })();

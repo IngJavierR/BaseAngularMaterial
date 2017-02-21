@@ -14,7 +14,7 @@ angular
     'ngMaterial',
     'ngMessages'
   ])
-  .config(function ($routeProvider, $locationProvider) {
+  .config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -30,9 +30,9 @@ angular
         redirectTo: '/'
       });
 
-      // use the HTML5 History API
-      $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-      });
+    // use the HTML5 History API
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });
   });
