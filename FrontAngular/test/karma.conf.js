@@ -42,6 +42,12 @@ module.exports = function(config) {
     // web server port
     port: 8080,
 
+    //Web ip address
+    listenAddress: '127.0.0.1',
+
+    //web hostname
+    hostname: '127.0.0.1',
+
     // Start these browsers, currently available:
     // - Chrome
     // - ChromeCanary

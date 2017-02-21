@@ -432,6 +432,8 @@ module.exports = function (grunt) {
       }
     }
   });
+  grunt.loadNpmTasks('grunt-karma');
+  grunt.registerTask('default', ['karma']);
 
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
