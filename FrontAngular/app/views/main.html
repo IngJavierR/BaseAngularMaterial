@@ -6,29 +6,35 @@
       <img src="images/yeoman.png" alt="I'm Yeoman"><br>
       Always a pleasure scaffolding your apps.
     </p>
-    <p><a class="btn btn-lg btn-success" ng-href="/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+    <p><a class="btn btn-lg btn-success" ng-href="/">Splendid!
+      <span class="glyphicon glyphicon-ok"></span>
+    </a></p>
   </div>
 
   <form name="projectForm">
     <md-input-container class="md-block">
         <label>Description</label>
-        <input md-maxlength="30" required md-no-asterisk name="description" ng-model="project.description">
+        <input md-maxlength="30" required md-no-asterisk name="description"
+          ng-model="project.description">
         <div ng-messages="projectForm.description.$error">
           <div ng-message="required">This is required.</div>
         </div>
     </md-input-container>
     <md-input-container class="md-block">
         <label>Client Email</label>
-        <input required type="email" name="clientEmail" ng-model="project.clientEmail"
-               minlength="10" maxlength="100"/>
+        <input required type="email" name="clientEmail"
+        ng-model="project.clientEmail" minlength="10" maxlength="100"/>
         <div ng-messages="projectForm.clientEmail.$error" role="alert">
           <div ng-message-exp="['required', 'minlength', 'maxlength']">
-            Your email must be between 10 and 100 characters long and look like an e-mail address.
+            Your email must be between 10 and 100 characters long and look
+            like an e-mail address.
           </div>
         </div>
     </md-input-container>
     <div>
-        <md-button class="md-raised md-primary" ng-disabled="projectForm.$invalid">Enviar</md-button>
+        <md-button class="md-raised md-primary"
+          ng-disabled="projectForm.$invalid">Enviar
+        </md-button>
     </div>
   </form>
 </md-content>
