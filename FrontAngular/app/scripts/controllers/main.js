@@ -15,11 +15,18 @@
 
   function MainCtrl() {
     var vm = this;
+    vm.prueba = Prueba;
+
     vm.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+
+    function Prueba(){
+      vm.data = vm.awesomeThings[1];
+      return vm.awesomeThings[0];
+    }
   }
 
 })();
