@@ -16,12 +16,17 @@
   function MainCtrl() {
     var vm = this;
     vm.prueba = Prueba;
-
     vm.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+
+    activate();
+
+    function activate(){
+
+    }
 
     function Prueba(){
       vm.data = vm.awesomeThings[1];
