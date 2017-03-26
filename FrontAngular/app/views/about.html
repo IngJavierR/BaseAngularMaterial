@@ -1,1 +1,9 @@
-<p>This is the about view.</p>
+<div layout="column">
+  <p>This is the about view.</p>
+  <div layout="column">
+    <button ng-click="about.tellJoke()"> Tell me a joke!</button>
+  </div>
+  <div layout="column">
+    <div style="width:150px;">{{about.joke}}</div>
+  </div>
+</div>
