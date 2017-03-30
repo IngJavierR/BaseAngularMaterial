@@ -1,0 +1,9 @@
+<p>Vista de tutorial</p>
+<input type="text" ng-model="tutorial.textoPrueba"/>
+<button ng-click="tutorial.dale('hola')">ClickMe!</button>
+<div ng-repeat="coche in tutorial.coches">
+  <br/>
+  {{coche}}
+  <button ng-click="tutorial.getCoche(coche)">Click!</button>
+</div>
+<span>{{tutorial.textoPrueba}}</span>
