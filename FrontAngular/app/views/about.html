@@ -1,9 +1,20 @@
-<div layout="column">
+<div layout="column" flex layout-align="center center">
   <p>This is the about view.</p>
   <div layout="column">
     <button ng-click="about.tellJoke()"> Tell me a joke!</button>
   </div>
   <div layout="column">
     <div style="width:150px;">{{about.joke}}</div>
+  </div>
+
+  <div layout="column">
+    <input type="text" ng-model="about.numJokes"></input>
+    <button ng-click="about.tellJokes()"> Tell me a more jokes!</button>
+  </div>
+  <div layout="column">
+    <div style="width:150px;" ng-repeat="one in about.jokes">
+      <br/>
+      {{one.joke}}
+    </div>
   </div>
 </div>

@@ -16,6 +16,7 @@
   function AboutCtrl($scope, jokes) {
     var vm = this;
     vm.tellJoke = tellJoke;
+    vm.tellJokes = tellJokes;
     vm.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -23,9 +24,18 @@
     ];
 
     function tellJoke(){
-      return jokes.getJoke()
+      jokes.getJoke()
       .then(function(data) {
         vm.joke = data;
+      });
+    }
+
+    function tellJokes(){
+      jokes.getJokes()
+      .get({number:vm.numJokes})
+      .$promise
+      .then(function(data){
+          vm.jokes = data.value;
       });
     }
   }

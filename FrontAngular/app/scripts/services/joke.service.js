@@ -4,11 +4,12 @@
   angular.module('demoApp')
     .factory('jokes', jokes);
 
-    jokes.$inject = ['$http'];
+    jokes.$inject = ['$http', '$resource'];
 
-    function jokes($http){
+    function jokes($http, $resource){
         var service = {
-          getJoke: getJoke
+          getJoke: getJoke,
+          getJokes: getJokes
         };
 
         return service;
@@ -21,6 +22,11 @@
           };
         }
 
+        function getJokes(){
+          return $resource(
+            'http://api.icndb.com/jokes/random/:number',
+            { number:'@number'} );
+        }
 
     }
 
