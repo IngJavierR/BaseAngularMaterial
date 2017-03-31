@@ -12,7 +12,8 @@ angular
   .module('demoApp', [
     'ngRoute',
     'ngMaterial',
-    'ngMessages'
+    'ngMessages',
+    'ngResource'
   ])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider

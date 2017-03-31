@@ -12,13 +12,15 @@
   angular.module('demoApp')
     .controller('TutorialCtrl', TutorialCtrl);
 
-  TutorialCtrl.$inject = ['$scope'];
+  TutorialCtrl.$inject = ['$scope','Jokes'];
 
-  function TutorialCtrl() {
+  function TutorialCtrl($scope, Jokes) {
     var vm = this;
     vm.textoPrueba = '';
+    vm.joke = '';
     vm.dale = dale;
     vm.getCoche = getCoche;
+    vm.getChuckJoke = getChuckJoke;
     vm.coches = ['Nissan','BMW','Audi','Meche'];
 
 
@@ -28,6 +30,12 @@
 
     function getCoche(coche){
       vm.textoPrueba = 'mi' + coche;
+    }
+
+    function getChuckJoke(){
+      Jokes.getJoke().then(function(result){
+        vm.joke = result;
+      });
     }
 
   }
