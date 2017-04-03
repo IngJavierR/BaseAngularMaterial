@@ -4,16 +4,17 @@
   angular.module('demoApp')
     .factory('Jokes', Jokes);
 
-    Jokes.$inject = ['$http'];
+    Jokes.$inject = ['$http', '$resource'];
 
-  function Jokes($http){
+  function Jokes($http, $resource){
     var service = {
-        getJoke: getJoke,
-        getJokes: getJokes
+        //getJoke: getJoke,
+        getJokes: getJokes,
+        suma: suma
     };
     return service;
 
-    function getJoke(){
+    /*function getJoke(){
       return $http.get('http://api.icndb.com/jokes/random')
       .then(responseJokeComplete, onerror);
 
@@ -24,10 +25,15 @@
       function onerror(error){
         return error;
       }
-    }
+    }*/
 
     function getJokes(){
+      return $resource('http://api.icndb.com/jokes/random/:number',
+        { number:'@number'} );
+    }
 
+    function suma(a,b){
+      return a + b;
     }
 
   }

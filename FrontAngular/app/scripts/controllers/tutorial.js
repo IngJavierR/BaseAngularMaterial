@@ -16,13 +16,23 @@
 
   function TutorialCtrl($scope, Jokes) {
     var vm = this;
+    vm.numJokes = 0;
     vm.textoPrueba = '';
     vm.joke = '';
     vm.dale = dale;
+    vm.varA = 0;
+    vm.varB = 0;
+    vm.sumaResult = 0;
+    vm.chuckJokes = [];
     vm.getCoche = getCoche;
     vm.getChuckJoke = getChuckJoke;
+    vm.getChuckJokes = getChuckJokes;
+    vm.sumaNum = sumaNum;
     vm.coches = ['Nissan','BMW','Audi','Meche'];
 
+    function sumaNum(){
+      vm.sumaResult = Jokes.suma(vm.varA, vm.varB);
+    }
 
     function dale(saludo){
       vm.textoPrueba = saludo + ' Javier';
@@ -33,9 +43,21 @@
     }
 
     function getChuckJoke(){
-      Jokes.getJoke().then(function(result){
-        vm.joke = result;
-      });
+      Jokes.getJokes()
+        .get()
+        .$promise
+        .then(function(data){
+          vm.joke = data.value.joke;
+        });
+    }
+
+    function getChuckJokes(){
+      Jokes.getJokes()
+        .get({number: vm.numJokes, name: 'intel'})
+        .$promise
+        .then(function(data){
+          vm.chuckJokes = data.value;
+        });
     }
 
   }

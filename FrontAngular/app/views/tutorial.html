@@ -1,10 +1,9 @@
 <p>Vista de tutorial</p>
-<input type="text" ng-model="tutorial.textoPrueba"/>
+<input type="text" ng-model="tutorial.textoPrueba" />
 <span ng-bind="tutorial.textoPrueba"></span>
 <button ng-click="tutorial.dale('hola')">ClickMe!</button>
 <div ng-repeat="coche in tutorial.coches">
-  <br/>
-  {{coche}}
+  <br/> {{coche}}
   <button ng-click="tutorial.getCoche(coche)">Click!</button>
 </div>
 <span>{{tutorial.textoPrueba}}</span>
@@ -12,3 +11,21 @@
 <br/>
 <button ng-click="tutorial.getChuckJoke()">Get Joke!</button>
 <span ng-bind="tutorial.joke"></span>
+
+<input type="number" ng-model="tutorial.numJokes"></input>
+<button ng-click="tutorial.getChuckJokes()">More Jokes!</button>
+<div ng-repeat="jokeSingle in tutorial.chuckJokes">
+  <br/> ========
+  <span ng-bind="jokeSingle.joke"></span>
+</div>
+
+<div>
+  <input type="number" ng-model="tutorial.varA"
+    style="width:50px;"></input>
+  +
+  <input type="number" ng-model="tutorial.varB"
+    style="width:50px;"></input>
+  <button ng-click="tutorial.sumaNum()">Suma</button>
+  =
+  <span ng-bind="tutorial.sumaResult"></span>
+</div>
