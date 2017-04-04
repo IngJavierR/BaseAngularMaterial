@@ -1,7 +1,33 @@
-<p>Vista de tutorial</p>
-<input type="text" ng-model="tutorial.textoPrueba" />
-<span ng-bind="tutorial.textoPrueba"></span>
-<button ng-click="tutorial.dale('hola')">ClickMe!</button>
+<div layout="row" layout-align="space-around center" flex="50">
+
+  <div layout="column">
+    <h1>Vista de tutorial</h1>
+    <md-input-container>
+      <label>Title</label>
+      <input type="text" ng-model="tutorial.textoPrueba"/>
+    </md-input-container>
+    <div layout="row">
+      Binding Example:
+      <span ng-bind="tutorial.textoPrueba"></span>
+    </div>
+    <md-button class="md-raised md-warn"
+      ng-click="tutorial.dale('hola')">ClickMe!</md-button>
+  </div>
+
+  <div layout="column">
+    <table>
+      <tr ng-repeat="coche in tutorial.coches">
+        <td>{{coche}}</td>
+        <td><md-button class="md-raised md-warn"
+            ng-click="tutorial.getCoche(coche)">Click!</md-button></td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+<!--
+
 <div ng-repeat="coche in tutorial.coches">
   <br/> {{coche}}
   <button ng-click="tutorial.getCoche(coche)">Click!</button>
@@ -29,3 +55,4 @@
   =
   <span ng-bind="tutorial.sumaResult"></span>
 </div>
+-->
