@@ -1,45 +1,58 @@
-<div layout="row" layout-align="space-around center" flex="50">
+<div layout="column">
 
-  <div layout="column">
-    <h1>Vista de tutorial</h1>
-    <md-input-container>
-      <label>Title</label>
-      <input type="text" ng-model="tutorial.textoPrueba"/>
-    </md-input-container>
-    <div layout="row">
-      Binding Example:
-      <span ng-bind="tutorial.textoPrueba"></span>
+  <div layout="row" layout-align="space-around center" flex="50">
+    <div layout="column">
+      <h1>Vista de tutorial</h1>
+      <md-input-container>
+        <label>Title</label>
+        <input type="text" ng-model="tutorial.textoPrueba" />
+      </md-input-container>
+      <div layout="row">
+        Binding Example:
+        <span ng-bind="tutorial.textoPrueba"></span>
+      </div>
+      <md-button class="md-raised md-warn" ng-click="tutorial.dale('hola')">ClickMe!</md-button>
     </div>
-    <md-button class="md-raised md-warn"
-      ng-click="tutorial.dale('hola')">ClickMe!</md-button>
+    <div layout="column">
+      <table>
+        <tr ng-repeat="coche in tutorial.coches">
+          <td>{{coche}}</td>
+          <td>
+            <md-button class="md-raised md-warn" ng-click="tutorial.getCoche(coche)">Click!</md-button>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
-  <div layout="column">
-    <table>
-      <tr ng-repeat="coche in tutorial.coches">
-        <td>{{coche}}</td>
-        <td><md-button class="md-raised md-warn"
-            ng-click="tutorial.getCoche(coche)">Click!</md-button></td>
-      </tr>
-    </table>
+  <br/>
+  <br/>
+
+  <div layout="column" layout-align="center center">
+    <md-button class="md-raised md-warn" ng-click="tutorial.getChuckJoke()">Get Joke!</md-button>
+    <h4 ng-bind="tutorial.joke"></h4>
   </div>
+
+  <div layout="row" layout-align="center center">
+    <md-input-container>
+      <label>#Jokes</label>
+      <input type="number" ng-model="tutorial.numJokes"></input>
+    </md-input-container>
+    <md-button class="md-fab md-mini md-warn" ng-click="tutorial.getChuckJokes()">
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+    </md-button>
+  </div>
+
+  <table class="table-striped">
+    <tr>
+      <td ng-repeat="jokeSingle in tutorial.chuckJokes">{{jokeSingle.joke}}</td>
+    </tr>
+  </table>
 
 </div>
 
 <!--
 
-<div ng-repeat="coche in tutorial.coches">
-  <br/> {{coche}}
-  <button ng-click="tutorial.getCoche(coche)">Click!</button>
-</div>
-<span>{{tutorial.textoPrueba}}</span>
-<br/>
-<br/>
-<button ng-click="tutorial.getChuckJoke()">Get Joke!</button>
-<span ng-bind="tutorial.joke"></span>
-
-<input type="number" ng-model="tutorial.numJokes"></input>
-<button ng-click="tutorial.getChuckJokes()">More Jokes!</button>
 <div ng-repeat="jokeSingle in tutorial.chuckJokes">
   <br/> ========
   <span ng-bind="jokeSingle.joke"></span>
