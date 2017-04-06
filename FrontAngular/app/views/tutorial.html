@@ -49,9 +49,48 @@
     </tr>
   </table>
 
-</div>
+  <form name="detenidoForm">
 
-<!--
+    <div layout="row">
+      <md-input-container>
+        <label>Nombre</label>
+        <input type="text" name="nombre" ng-model="tutorial.detenido.nombre" required></input>
+        <div ng-messages="detenidoForm.nombre.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Apellidos</label>
+        <input type="text" name="apellidos" ng-model="tutorial.detenido.apellidos" required></input>
+        <div ng-messages="detenidoForm.apellidos.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+
+    <md-input-container>
+      <label>Sexo</label>
+      <md-select name="sexo" ng-model="tutorial.detenido.sexo" required>
+        <md-option value="1">Diario</md-option>
+        <md-option value="2">Aveces</md-option>
+      </md-select>
+      <div ng-messages="detenidoForm.sexo.$error">
+        <div ng-message="required">This is required.</div>
+      </div>
+    </md-input-container>
+
+    <md-button class="md-raised md-warn" ng-disabled="detenidoForm.$invalid">Submit!</md-button>
+    <span ng-show="detenidoForm.$dirty">Ya escribiste algo</span>
+
+  </form>
+
+  <detenido-control></detenido-control>
+  <detenido-control></detenido-control>
+
+  </div>
+
+  <!--
 
 <div ng-repeat="jokeSingle in tutorial.chuckJokes">
   <br/> ========

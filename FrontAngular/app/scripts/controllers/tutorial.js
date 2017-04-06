@@ -29,6 +29,9 @@
     vm.getChuckJokes = getChuckJokes;
     vm.sumaNum = sumaNum;
     vm.coches = ['Nissan','BMW','Audi','Meche'];
+    vm.detenido = {
+      nombre: 'el chaca'
+    };
 
     function sumaNum(){
       vm.sumaResult = Jokes.suma(vm.varA, vm.varB);
