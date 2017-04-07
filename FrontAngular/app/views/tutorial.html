@@ -85,8 +85,21 @@
 
   </form>
 
-  <detenido-control></detenido-control>
-  <detenido-control></detenido-control>
+
+
+  <dynamic-select label="Pais"
+    ng-model="tutorial.detenido.pais"
+    collection="tutorial.catalogosList"
+    filter="PA" name="pais" form="detenidoForm">
+  </dynamic-select>
+  <span>{{tutorial.detenido.pais}}</span>
+
+  <dynamic-select label="Ojos"
+    ng-model="tutorial.detenido.ojos"
+    collection="tutorial.catalogosList"
+    filter="OJ" name="ojos" form="detenidoForm">
+  </dynamic-select>
+  <span>{{tutorial.detenido.ojos}}</span>
 
   </div>
 

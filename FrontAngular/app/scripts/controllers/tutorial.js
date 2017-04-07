@@ -30,8 +30,29 @@
     vm.sumaNum = sumaNum;
     vm.coches = ['Nissan','BMW','Audi','Meche'];
     vm.detenido = {
-      nombre: 'el chaca'
+      nombre: 'el chaca',
+      pais: ''
     };
+    vm.catalogosList = [
+    {
+      key: 'PA',
+      id: 'PA1',
+      value: 'México'
+    },{
+      key: 'OJ',
+      id: 'OJ1',
+      value: 'Verdes'
+    },{
+      key: 'PA',
+      id: 'PA2',
+      value: 'Estados Trump'
+    },{
+      key: 'OJ',
+      id: 'OJ2',
+      value: 'Azules'
+    }
+  ];
+
 
     function sumaNum(){
       vm.sumaResult = Jokes.suma(vm.varA, vm.varB);
