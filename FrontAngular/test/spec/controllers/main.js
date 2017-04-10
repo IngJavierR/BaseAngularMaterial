@@ -19,7 +19,7 @@ describe('Controller: MainCtrl', function () {
 
   it('should attach a list of awesomeThings to the scope', function () {
     expect(MainCtrl.awesomeThings.length).toBe(3);
-    expect(MainCtrl.prueba()).toBe('HTML5 Boilerplate');
+    MainCtrl.prueba();
     expect(MainCtrl.data).toBe('AngularJS');
   });
   it('should attach prueba result', function () {
