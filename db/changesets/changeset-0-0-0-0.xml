@@ -1,0 +1,2803 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="frodriguez (generated)" id="1490638945289-1">
+        <createTable tableName="PersonasLugarIntervencion">
+            <column name="IdPersonaLugarIntervencion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdLugarIntervencion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPersona" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MotivoIngreso" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ObjetoTrasladado" type="varchar(1)"/>
+            <column name="Observaciones" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-2">
+        <createTable tableName="ServidoresPublicos">
+            <column name="idServidoresPublicos" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="idInstitucion" type="int"/>
+            <column name="etapa" type="varchar(1)"/>
+            <column name="idCadenaCustodia" type="int"/>
+            <column name="nombreCompleto" type="varchar(1)"/>
+            <column name="cargo" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-3">
+        <createTable tableName="InspeccionPersona">
+            <column name="IdInspeccionPersona" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdInspeccion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Narrativa" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Observaciones" type="varchar(1)"/>
+            <column name="IdRegistroCadenaCustodia" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-4">
+        <createTable tableName="PrimerRespondiente">
+            <column name="IdPrimerRespondiente" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPuestaDisposicion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPolicia" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-5">
+        <createTable tableName="Traslado">
+            <column name="IdTraslado" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdAuxilio" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoTraslado" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdLugarTraslado" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="InstitucionOrdenaTraslado" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdServPublicoOrdena" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="InstitucionRealizaTraslado" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdServPublicoRecibe" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-6">
+        <createTable tableName="Pertenencia">
+            <column name="IdPertenencia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdCalificacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Cantidad" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdTipo" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Observaciones" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-7">
+        <createTable tableName="LugarTraslado">
+            <column name="IdLugarTraslado" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoLugarTraslado" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Direccion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="InstitucionOrdenaTraslado" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdServidorPublicoOrdenaTraslado" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="InstitucionRealizaTraslado" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdAutoridadRecibe" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-8">
+        <createTable tableName="Rostro">
+            <column name="IdRostro" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ImagenFrontal" type="varbinary(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ImagenDerecho" type="varbinary(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ImagenIzquierdo" type="varbinary(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-9">
+        <createTable tableName="RegistroDetencion">
+            <column name="IdRegistroDetencion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDetencion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdLugarDetencion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FechaDetencion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdAutoridadDetiene" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MotivoDetencion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdAuxilio" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdTraslado" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TrasladoOtro" type="varchar(1)"/>
+            <column name="IdPolicia" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-10">
+        <createTable tableName="ApoyoPrimerRespondiente">
+            <column name="IdApoyoPrimerRespondiente" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdActa" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipo" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Unidad" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NumEco" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PersonaCargo" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-11">
+        <createTable tableName="CalificacionEventoDetenido">
+            <column name="IdCalificacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdEvento" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdSituacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Fundamento" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EvolucionSituacion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdArticulo" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdMotivoDetencion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdHorasArresto" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SancionMulta" type="decimal(18, 0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SancionRazonamiento" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdJuez" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-12">
+        <createTable tableName="ValoracionMedica">
+            <column name="IdValoracion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdEvento" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdMedico" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SometidoTortura" type="binary(1)"/>
+            <column name="Conclusiones" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ImpresionDiagnostica" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-13">
+        <createTable tableName="Informe">
+            <column name="IdInforme" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Referencia" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Folio" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdInstitucion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FechaConocimiento" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPolicia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDomicilio" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-14">
+        <createTable tableName="HallazgoPersona">
+            <column name="IdHallazgoPersona" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdInspeccionPersona" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoObjeto" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TipoObjetoOtro" type="varchar(1)"/>
+            <column name="Cantidad" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveUnidadMedida" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPolicia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="coordenadaObjeto" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-15">
+        <createTable tableName="RegistroCadenaCustodia">
+            <column name="idRegistroCadenaCustodia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveCadenaCustodia" type="varchar(1)"/>
+            <column name="noReferencia" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-16">
+        <createTable tableName="InstitucionCadenaCustodia">
+            <column name="idInstitucionCadenaCustoria" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="idInstitucion" type="int"/>
+            <column name="folio" type="varchar(1)"/>
+            <column name="LugarIntervencion" type="varchar(1)"/>
+            <column name="fecha" type="datetime"/>
+            <column name="idCadenaCustodia" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-17">
+        <createTable tableName="Anexos">
+            <column name="IdAnexos" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDocumentacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoAnexo" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Cantidad" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-18">
+        <createTable tableName="CadenaCustodia">
+            <column name="IdCadenaCustodia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdInstitucion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Folio" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LugarIntervencion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Fecha" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-19">
+        <createTable tableName="PuestaDisposicion">
+            <column name="IdPuestaDisposicion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdActa" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdMinisterioPublico" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdLugarDisposicion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FechaDisposicion" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-20">
+        <createTable tableName="EventoPolicias">
+            <column name="IdEventoPolicias" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPolicia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdEvento" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-21">
+        <createTable tableName="AccionesRealizadas">
+            <column name="IdAccionesRealizadas" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdActa" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoAccion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-22">
+        <createTable tableName="Personal">
+            <column name="IdPersonal" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Nombre" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ApellidoPaterno" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ApellidoMaterno" type="varchar(1)"/>
+            <column name="cveGrado" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipo" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-23">
+        <createTable tableName="PoliciasPriorizacion">
+            <column name="IdPoliciaPriorizacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPriorizacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPolicia" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-24">
+        <createTable tableName="ExploracionFisica">
+            <column name="IdExploracionFisica" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdValoracion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DescripcionExploracion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AlcohometriaHoraPrueba" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AlcohometriaResultado" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-25">
+        <createTable tableName="Denunciante">
+            <column name="IdDenunciante" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Nombre" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ApellidoPaterno" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ApellidoMaterno" type="varchar(1)"/>
+            <column name="IdDomicilio" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoIdentificacion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NumeroIdentificacion" type="varchar(1)"/>
+            <column name="IdPersona" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-26">
+        <createTable tableName="Embalaje">
+            <column name="idEmbalaje" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bolsa" type="varchar(1)"/>
+            <column name="caja" type="varchar(1)"/>
+            <column name="recipiente" type="varchar(1)"/>
+            <column name="idCadenaCustodia" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-27">
+        <createTable tableName="InspeccionVehiculos">
+            <column name="IdInspeccionVehiculo" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdInspeccion" type="int"/>
+            <column name="cveTipoVehiculo" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveMarca" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveSubmarca" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveModelo" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="color" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Placa" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveEntidadFederativa" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NombrePropietario" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPolicia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="idRegistroCadenaCustodia" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-28">
+        <createTable tableName="Salida">
+            <column name="IdSalida" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdCalificacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdMotivo" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ReferenciaPago" type="varchar(1)"/>
+            <column name="Fundamentacion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Razonamiento" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-29">
+        <createTable tableName="AliasDetenido">
+            <column name="IdAliasDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Alias" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-30">
+        <createTable tableName="RevisionMedica">
+            <column name="IdRevisionMedica" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdValoracion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdAliento" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AlientoDescripcion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdNivelConciencia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdComportamiento" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPensamiento" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdLenguaje" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdOrientacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Observaciones" type="varchar(1)"/>
+            <column name="PruebaDedoNariz" type="binary(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDiadococinesia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MentalOtras" type="varchar(1)"/>
+            <column name="IdPupilas" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdNistagmos" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdMarcha" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdRomberg" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPuntaTalon" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PruebasOtros" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-31">
+        <createTable tableName="ContinuidadCadenaCustodia">
+            <column name="idContinuidadCadenaCustodia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fechaEntregaRecepcion" type="datetime"/>
+            <column name="actividadEntregaRecepcion" type="varchar(1)"/>
+            <column name="idPersonalEntrega" type="int"/>
+            <column name="idInstitucionEntrega" type="int"/>
+            <column name="lugarPermanencia" type="varchar(1)"/>
+            <column name="actividadLugarPermanencia" type="varchar(1)"/>
+            <column name="idPersonalRecibe" type="int"/>
+            <column name="idInstitucionRecibe" type="int"/>
+            <column name="observaciones" type="varchar(1)"/>
+            <column name="idCadenaCustodia" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-32">
+        <createTable tableName="Evento">
+            <column autoIncrement="true" name="IdEvento" type="int">
+                <constraints primaryKey="true" primaryKeyName="PK_Evento"/>
+            </column>
+            <column name="Folio" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FechaEvento" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdUbicacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Descripcion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Narrativa" type="varchar(1)"/>
+            <column name="FechaRegistro" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UltimaModificacion" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDomicilio" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-33">
+        <createTable tableName="HallazgoVehiculos">
+            <column name="IdHallazgoVehiculo" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdInspeccionVehiculo" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Cantidad" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ObjetoPersona" type="bigint"/>
+            <column name="Descripcion" type="varchar(1)"/>
+            <column name="IdPolicia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Observaciones" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="coordenadasObjeto" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-34">
+        <createTable tableName="c_tipoDomicilio">
+            <column name="cveTipoDomicilio" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="descripcion" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-35">
+        <createTable tableName="EventoDetenidos">
+            <column name="IdEventoDetenidos" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdEvento" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveEstadoEventoDetenido" type="varchar(1)"/>
+            <column name="fechaInicioEvento" type="datetime"/>
+            <column name="fechaFinEvento" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-36">
+        <createTable tableName="Inspecciones">
+            <column name="IdInspecciones" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdAcciones" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoInspeccion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-37">
+        <createTable tableName="Detenido">
+            <column name="IdDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Nombre" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ApellidoPaterno" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ApellidoMaterno" type="varchar(1)"/>
+            <column name="FechaNacimiento" type="datetime"/>
+            <column name="cveGenero" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Edad" type="int"/>
+            <column name="cveEstadoCivil" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveCondicionEstadoCivil" type="varchar(1)"/>
+            <column name="IdNacionalidad" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveEscolaridad" type="varchar(1)"/>
+            <column name="cveOcupacion" type="varchar(1)"/>
+            <column name="cveSueldoSemanal" type="varchar(1)"/>
+            <column name="cveTipoIdentificacion" type="varchar(1)"/>
+            <column name="NumeroIdentificacion" type="varchar(1)"/>
+            <column name="IdLugarNacimiento" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdLugarResidencia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Descripcion" type="varchar(1)"/>
+            <column name="IdHuellas" type="int"/>
+            <column name="IdRostro" type="int"/>
+            <column name="IdPersona" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-38">
+        <createTable tableName="MediaFiliacion">
+            <column name="IdMediaFiliacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Estatura" type="decimal(18, 0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Peso" type="decimal(18, 0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveComplexion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveColorPiel" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveCara" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoSangre" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveFactorRh" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fgUsaAnteojos" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveOjosTamano" type="varchar(1)"/>
+            <column name="cveOjosColor" type="varchar(1)"/>
+            <column name="cveOjosForma" type="varchar(1)"/>
+            <column name="cveBocaTamano" type="varchar(1)"/>
+            <column name="cveBocaComisua" type="varchar(1)"/>
+            <column name="cveBocaLabios" type="varchar(1)"/>
+            <column name="cveNariz" type="varchar(1)"/>
+            <column name="cveOreja" type="varchar(1)"/>
+            <column name="cveFrente" type="varchar(1)"/>
+            <column name="cveCejas" type="varchar(1)"/>
+            <column name="cveMenton" type="varchar(1)"/>
+            <column name="cveCabello" type="varchar(1)"/>
+            <column name="cveCabelloColor" type="varchar(1)"/>
+            <column name="cveCabelloForma" type="varchar(1)"/>
+            <column name="cveCabelloTamano" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-39">
+        <createTable tableName="CorreoDetenido">
+            <column name="IdCorreoDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdCorreo" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-40">
+        <createTable tableName="Correo">
+            <column name="IdCorreo" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoCorreo" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Correo" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-41">
+        <createTable tableName="Persona">
+            <column name="idPersona" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FechaCreacion" type="datetime"/>
+            <column name="idPersonal" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-42">
+        <createTable tableName="TestigosLugar">
+            <column name="IdTestigosLugar" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdInspeccionLugar" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Nombre" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Domicilio" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Telefonos" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Calidad" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoIdentificacion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NumeroIdentificacion" type="varchar(1)"/>
+            <column name="FgAnexaEntrevista" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Observaciones" type="varchar(1)"/>
+            <column name="IdPolicia" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-43">
+        <createTable tableName="Acta">
+            <column name="IdActa" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdInforme" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoEvento" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveMedioNotificacionNoticia" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MedioNotificacionNoticiaOtros" type="varchar(1)"/>
+            <column name="cveTipoDelitoReportado" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoDelitoReal" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FechaArribo" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdLugar" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ReferenciasLugar" type="varchar(1)"/>
+            <column name="RequiereApoyo" type="binary(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RequiereApoyoDescripcion" type="varchar(1)"/>
+            <column name="IdDenunciante" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NarracionHechos" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="HechosVeridicos" type="binary(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-44">
+        <createTable tableName="Lesiones">
+            <column name="IdLesiones" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdExploracionFisica" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdTipo" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdLugar" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Observaciones" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-45">
+        <createTable tableName="PoliciasTraslado">
+            <column name="IdPoliciaTraslado" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdTraslado" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPolicia" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-46">
+        <createTable tableName="EntregaRecepcionLugarHechos">
+            <column name="IdEntregaRecepcionLugarHechos" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdAcciones" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdLugar" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPersonaEntrega" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FechaEntrega" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPersonaRecibe" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FechaRecibe" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Observaciones" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-47">
+        <createTable tableName="DocumentacionObjetos">
+            <column name="idDocumentacionObjetos" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="escritorio" type="varchar(1)"/>
+            <column name="fotografico" type="varchar(1)"/>
+            <column name="croquis" type="varchar(1)"/>
+            <column name="especificoOtros" type="varchar(1)"/>
+            <column name="idCadenaCustodia" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-48">
+        <createTable tableName="Manifestacion">
+            <column name="IdManifestacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdCalificacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ManifestacionOfendido" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ManifestacionOfensor" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPruebas" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-49">
+        <createTable tableName="Priorizacion">
+            <column name="IdPriorizacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdAcciones" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveAutoridadAInformar" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveMedioSeInforma" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FechaRecoleccion" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MotivoPriorizacion" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-50">
+        <createTable tableName="Domicilio">
+            <column autoIncrement="true" name="IdDomicilio" type="int">
+                <constraints primaryKey="true" primaryKeyName="PK_Domicilio"/>
+            </column>
+            <column name="cveTipoDomicilio" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Calle" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NumExterior" type="varchar(1)"/>
+            <column name="NumInterior" type="varchar(1)"/>
+            <column name="cvePais" type="varchar(1)"/>
+            <column name="cveEntidad" type="varchar(1)"/>
+            <column name="cveMunicipio" type="varchar(1)"/>
+            <column name="cveColonia" type="varchar(1)"/>
+            <column name="CodigoPostal" type="varchar(1)"/>
+            <column name="EntreCalle1" type="varchar(1)"/>
+            <column name="EntreCalle2" type="varchar(1)"/>
+            <column name="Observaciones" type="varchar(1)"/>
+            <column name="UbicacionGeografica" type="varchar(MAX)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-51">
+        <createTable tableName="Audiencia">
+            <column name="IdAudiencia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdCalificacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Defensor" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CargoImputado" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Llamada" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-52">
+        <createTable tableName="Auxilio">
+            <column name="IdAuxilio" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdAcciones" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdTipoPersona" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoAuxilio" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-53">
+        <createTable tableName="ActaPolicias">
+            <column name="IdActaPolicias" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdActa" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPolicia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveRol" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-54">
+        <createTable tableName="Documentacion">
+            <column name="IdDocumentacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdActa" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FgEvidenciaFotografica" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FgEvidenciaVideografica" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EvidenciaOtros" type="varchar(1)"/>
+            <column name="NarracionPrimerRespondiente" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-55">
+        <createTable tableName="TrasladoObjetos">
+            <column name="idTrasladoObjetos" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoVia" type="varchar(1)"/>
+            <column name="requiereCondicionesEspeciales" type="bit"/>
+            <column name="recomendaciones" type="varchar(1)"/>
+            <column name="idCadenaCustodia" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-56">
+        <createTable tableName="Inspeccion">
+            <column name="IdInspeccion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdActa" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoInspeccion" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-57">
+        <createTable tableName="IdentidadObjetos">
+            <column name="idIdentidadObjetos" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="identificacinObjetos" type="varchar(1)"/>
+            <column name="descripcion" type="varchar(1)"/>
+            <column name="ubicacion" type="varchar(1)"/>
+            <column name="horaRecoleccion" type="datetime"/>
+            <column name="idCadenaCustodia" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-58">
+        <createTable tableName="Tatuaje">
+            <column name="IdTatuaje" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdExploracionFisica" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdTipo" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdLugar" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-59">
+        <createTable tableName="Detencion">
+            <column name="IdDetencion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdActa" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ExistenDetenidos" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NumeroDetenidos" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-60">
+        <createTable tableName="c_entidadFederativa">
+            <column name="cve_entidad" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nombre" type="varchar(1)"/>
+            <column name="cvePais" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-61">
+        <createTable tableName="HallazgoLugar">
+            <column name="IdHallazgoLugar" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdInspeccionLugar" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Cantidad" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Objetos" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Descripcion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPolicia" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-62">
+        <createTable tableName="Huellas">
+            <column name="IdHuellas" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveEstadoHuella" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ImagenHuella" type="varbinary(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dedoHuella" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-63">
+        <createTable tableName="LugarIntervencion">
+            <column name="IdLugarIntervencion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdAcciones" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoLugarIntervencion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DetectaRiesgo" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RiesgoDescripcion" type="varchar(1)"/>
+            <column name="IngresoPersona" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ModificoLugar" type="bit">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-64">
+        <createTable tableName="InspeccionLugares">
+            <column name="IdInspeccionLugare" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdInspeccion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoLugar" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TipoLugarOtros" type="varchar(1)"/>
+            <column name="cveTipoSuelo" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TipoSueloOtros" type="varchar(1)"/>
+            <column name="cveCondicionSuelo" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CondicionSueloOtros" type="varchar(1)"/>
+            <column name="cveTipoClima" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tipoClimaOtros" type="varchar(1)"/>
+            <column name="cveTipoIluminacion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tipoIluminacionOtros" type="varchar(1)"/>
+            <column name="Observaciones" type="varchar(1)"/>
+            <column name="Croquis" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdPolicia" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-65">
+        <createTable tableName="AntecedentePatalogico">
+            <column name="IdAntecedente" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdValoracion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PadeceEnfermedad" type="binary(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IngirioMedicamento" type="binary(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IngestaAlcohol" type="binary(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AlcoholTipoBebida" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AlcoholCantidad" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AlcoholTiempoEvolucion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ConsumoDroga" type="binary(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DrogaTipo" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DrogaCantidad" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DrogaTiempoEvolucion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-66">
+        <createTable tableName="Policia">
+            <column name="IdPolicia" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveCorporacion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Patrulla" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Oficial" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Nombre" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Placa" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-67">
+        <createTable tableName="MediaFiliacionAnexo">
+            <column name="idMediaFiliacionAnexo" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TipoVestiment" type="varchar(1)"/>
+            <column name="SenasParticulares" type="varchar(1)"/>
+            <column name="DescripcionEstado" type="varchar(1)"/>
+            <column name="Otros" type="varchar(1)"/>
+            <column name="IdMediaFiliacion" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-68">
+        <createTable tableName="c_pais">
+            <column name="cvePais" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nombre" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-69">
+        <createTable tableName="Telefono">
+            <column name="IdTelefono" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveTipoTelefono" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Telefono" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="idPersona" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-70">
+        <createTable tableName="TelefonoDetenido">
+            <column name="IdTelefonoDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdTelefono" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-71">
+        <createTable tableName="c_d_catalogos">
+            <column name="cveCDCatalogos" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="descripcion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fgActivo" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fechaCreacion" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fechaModificacion" type="datetime"/>
+            <column name="usuarioCreacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="usuarioModificacion" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-72">
+        <createTable tableName="ReferenciasPersonales">
+            <column name="IdReferenciasPersonales" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdDetenido" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Nombre" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ApellidoPaterno" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ApellidoMaterno" type="varchar(1)"/>
+            <column name="cveTipoRelacion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TelefonoContacto" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-73">
+        <createTable tableName="c_municipio">
+            <column name="cve_municipio" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nombre" type="varchar(1)"/>
+            <column name="cveEntidad" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-74">
+        <createTable tableName="Resolucion">
+            <column name="IdResolucion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdCalificacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IdArticulo" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Flagrancia" type="smallint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Resolucion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Fundamentacion" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-75">
+        <createTable tableName="c_colonia">
+            <column name="cveColonia" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nombre" type="varchar(1)"/>
+            <column name="cveMunicipio" type="varchar(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-76">
+        <createTable tableName="c_catalogos">
+            <column name="cveCatalogo" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valor" type="varchar(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cveCDCatalogos" type="varchar(1)"/>
+            <column name="cveCatalogoPadre" type="varchar(1)"/>
+            <column name="fgActivo" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fechaCreacion" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fechaModificacion" type="datetime"/>
+            <column name="usuarioCreacion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="usuarioModificacion" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-77">
+        <createTable tableName="Recoleccion">
+            <column name="idRecoleccion" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="manual" type="varchar(1)"/>
+            <column name="instrumental" type="varchar(1)"/>
+            <column name="idCadenaCustodia" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-78">
+        <addPrimaryKey columnNames="IdPersonaLugarIntervencion" constraintName="PK_PersonasLugarIntervencion" tableName="PersonasLugarIntervencion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-79">
+        <createIndex indexName="IXFK_ServidoresPublicos_CadenaCustodia" tableName="ServidoresPublicos">
+            <column name="idCadenaCustodia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-80">
+        <addPrimaryKey columnNames="idServidoresPublicos" constraintName="PK_ServidoresPublicos" tableName="ServidoresPublicos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-81">
+        <createIndex indexName="IXFK_InspeccionPersona_Detenido" tableName="InspeccionPersona">
+            <column name="IdDetenido"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-82">
+        <createIndex indexName="IXFK_InspeccionPersona_RegistroCadenaCustodia" tableName="InspeccionPersona">
+            <column name="IdRegistroCadenaCustodia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-83">
+        <addPrimaryKey columnNames="IdInspeccionPersona" constraintName="PK_InspeccionPersona" tableName="InspeccionPersona"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-84">
+        <addPrimaryKey columnNames="IdPrimerRespondiente" constraintName="PK_PrimerRespondiente" tableName="PrimerRespondiente"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-85">
+        <createIndex indexName="IXFK_Traslado_c_catalogos" tableName="Traslado">
+            <column name="cveTipoTraslado"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-86">
+        <addPrimaryKey columnNames="IdTraslado" constraintName="PK_Traslado" tableName="Traslado"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-87">
+        <createIndex indexName="IXIdCalificacion" tableName="Audiencia">
+            <column name="IdCalificacion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-88">
+        <createIndex indexName="IXIdCalificacion" tableName="Manifestacion">
+            <column name="IdCalificacion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-89">
+        <createIndex indexName="IXIdCalificacion" tableName="Pertenencia">
+            <column name="IdCalificacion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-90">
+        <createIndex indexName="IXIdCalificacion" tableName="Resolucion">
+            <column name="IdCalificacion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-91">
+        <createIndex indexName="IXIdCalificacion" tableName="Salida">
+            <column name="IdCalificacion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-92">
+        <addPrimaryKey columnNames="IdPertenencia" constraintName="PK_Pertenencia" tableName="Pertenencia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-93">
+        <createIndex indexName="IXFK_LugarTraslado_c_catalogos" tableName="LugarTraslado">
+            <column name="cveTipoLugarTraslado"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-94">
+        <addPrimaryKey columnNames="IdLugarTraslado" constraintName="PK_LugarTraslado" tableName="LugarTraslado"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-95">
+        <addPrimaryKey columnNames="IdRostro" constraintName="PK_Rostro" tableName="Rostro"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-96">
+        <createIndex indexName="IXFK_RegistroDetencion_Detenido_02" tableName="RegistroDetencion">
+            <column name="IdDetenido"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-97">
+        <addPrimaryKey columnNames="IdRegistroDetencion" constraintName="PK_RegistroDetencion" tableName="RegistroDetencion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-98">
+        <addPrimaryKey columnNames="IdApoyoPrimerRespondiente" constraintName="PK_ApoyoPrimerRespondiente" tableName="ApoyoPrimerRespondiente"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-99">
+        <createIndex indexName="IXIdDetenido" tableName="AliasDetenido">
+            <column name="IdDetenido"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-100">
+        <createIndex indexName="IXIdDetenido" tableName="CalificacionEventoDetenido">
+            <column name="IdDetenido"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-101">
+        <createIndex indexName="IXIdDetenido" tableName="CorreoDetenido">
+            <column name="IdDetenido"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-102">
+        <createIndex indexName="IXIdDetenido" tableName="EventoDetenidos">
+            <column name="IdDetenido"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-103">
+        <createIndex indexName="IXIdDetenido" tableName="MediaFiliacion">
+            <column name="IdDetenido"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-104">
+        <createIndex indexName="IXIdDetenido" tableName="ReferenciasPersonales">
+            <column name="IdDetenido"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-105">
+        <createIndex indexName="IXIdDetenido" tableName="TelefonoDetenido">
+            <column name="IdDetenido"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-106">
+        <createIndex indexName="IXIdDetenido" tableName="ValoracionMedica">
+            <column name="IdDetenido"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-107">
+        <createIndex indexName="IXIdEvento" tableName="CalificacionEventoDetenido">
+            <column name="IdEvento"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-108">
+        <createIndex indexName="IXIdEvento" tableName="EventoDetenidos">
+            <column name="IdEvento"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-109">
+        <createIndex indexName="IXIdEvento" tableName="EventoPolicias">
+            <column name="IdEvento"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-110">
+        <createIndex indexName="IXIdEvento" tableName="ValoracionMedica">
+            <column name="IdEvento"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-111">
+        <addPrimaryKey columnNames="IdCalificacion" constraintName="PK_CalificacionEvento" tableName="CalificacionEventoDetenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-112">
+        <addPrimaryKey columnNames="IdValoracion" constraintName="PK_ValoracionMedica" tableName="ValoracionMedica"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-113">
+        <createIndex indexName="IXFK_Informe_Domicilio" tableName="Informe">
+            <column name="IdDomicilio"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-114">
+        <addPrimaryKey columnNames="IdInforme" constraintName="PK_Informe" tableName="Informe"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-115">
+        <addForeignKeyConstraint baseColumnNames="IdInspeccionPersona" baseTableName="HallazgoPersona" constraintName="FK_HallazgoPersona_InspeccionPersona" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdInspeccionPersona" referencedTableName="InspeccionPersona"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-116">
+        <createIndex indexName="IXFK_HallazgoPersona_c_catalogos" tableName="HallazgoPersona">
+            <column name="cveTipoObjeto"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-117">
+        <createIndex indexName="IXFK_HallazgoPersona_c_catalogos_02" tableName="HallazgoPersona">
+            <column name="cveUnidadMedida"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-118">
+        <addPrimaryKey columnNames="IdHallazgoPersona" constraintName="PK_HallazgoPersona" tableName="HallazgoPersona"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-119">
+        <addPrimaryKey columnNames="idRegistroCadenaCustodia" constraintName="PK_RegistroCadenaCustodia" tableName="RegistroCadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-120">
+        <addForeignKeyConstraint baseColumnNames="idCadenaCustodia" baseTableName="InstitucionCadenaCustodia" constraintName="FK_InstitucionCadenaCustodia_CadenaCustodia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="idRegistroCadenaCustodia" referencedTableName="RegistroCadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-121">
+        <createIndex indexName="IXFK_InstitucionCadenaCustodia_CadenaCustodia" tableName="InstitucionCadenaCustodia">
+            <column name="idCadenaCustodia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-122">
+        <addPrimaryKey columnNames="idInstitucionCadenaCustoria" constraintName="PK_InstitucionCadenaCustodia" tableName="InstitucionCadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-123">
+        <createIndex indexName="IXFK_Anexos_c_catalogos" tableName="Anexos">
+            <column name="cveTipoAnexo"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-124">
+        <addPrimaryKey columnNames="IdAnexos" constraintName="PK_Anexos" tableName="Anexos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-125">
+        <addPrimaryKey columnNames="IdCadenaCustodia" constraintName="PK_CadenaCustodia" tableName="CadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-126">
+        <addPrimaryKey columnNames="IdPuestaDisposicion" constraintName="PK_PuestaDisposicion" tableName="PuestaDisposicion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-127">
+        <createIndex indexName="IXIdPolicia" tableName="EventoPolicias">
+            <column name="IdPolicia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-128">
+        <addPrimaryKey columnNames="IdEventoPolicias" constraintName="PK_EventoPolicias" tableName="EventoPolicias"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-129">
+        <createIndex indexName="IXFK_AccionesRealizadas_c_catalogos" tableName="AccionesRealizadas">
+            <column name="cveTipoAccion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-130">
+        <addPrimaryKey columnNames="IdAccionesRealizadas" constraintName="PK_AccionesRealizadas" tableName="AccionesRealizadas"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-131">
+        <createIndex indexName="IXFK_Personal_c_catalogos" tableName="Personal">
+            <column name="cveGrado"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-132">
+        <createIndex indexName="IXFK_Personal_c_catalogos_02" tableName="Personal">
+            <column name="cveTipo"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-133">
+        <addPrimaryKey columnNames="IdPersonal" constraintName="PK_Policia_Personal" tableName="Personal"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-134">
+        <addPrimaryKey columnNames="IdPoliciaPriorizacion" constraintName="PK_PersonasPriorizacion" tableName="PoliciasPriorizacion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-135">
+        <addForeignKeyConstraint baseColumnNames="IdValoracion" baseTableName="ExploracionFisica" constraintName="FK_ExploracionFisica_ValoracionMedica" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdValoracion" referencedTableName="ValoracionMedica"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-136">
+        <createIndex indexName="IXIdValoracion" tableName="AntecedentePatalogico">
+            <column name="IdValoracion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-137">
+        <createIndex indexName="IXIdValoracion" tableName="ExploracionFisica">
+            <column name="IdValoracion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-138">
+        <createIndex indexName="IXIdValoracion" tableName="RevisionMedica">
+            <column name="IdValoracion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-139">
+        <addPrimaryKey columnNames="IdExploracionFisica" constraintName="PK_ExploracionFisica" tableName="ExploracionFisica"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-140">
+        <createIndex indexName="IXFK_Denunciante_c_catalogos" tableName="Denunciante">
+            <column name="cveTipoIdentificacion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-141">
+        <createIndex indexName="IXFK_Denunciante_Domicilio" tableName="Denunciante">
+            <column name="IdDomicilio"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-142">
+        <addPrimaryKey columnNames="IdDenunciante" constraintName="PK_Denunciante" tableName="Denunciante"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-143">
+        <addForeignKeyConstraint baseColumnNames="idCadenaCustodia" baseTableName="Embalaje" constraintName="FK_Embajaje_CadenaCustodia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="idRegistroCadenaCustodia" referencedTableName="RegistroCadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-144">
+        <createIndex indexName="IXFK_Embajaje_CadenaCustodia" tableName="Embalaje">
+            <column name="idCadenaCustodia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-145">
+        <addPrimaryKey columnNames="idEmbalaje" constraintName="PK_Embajaje" tableName="Embalaje"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-146">
+        <addForeignKeyConstraint baseColumnNames="IdPolicia" baseTableName="InspeccionVehiculos" constraintName="FK_InspeccionVehiculos_Personal" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdPersonal" referencedTableName="Personal"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-147">
+        <addForeignKeyConstraint baseColumnNames="idRegistroCadenaCustodia" baseTableName="InspeccionVehiculos" constraintName="FK_InspeccionVehiculos_RegistroCadenaCustodia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="idRegistroCadenaCustodia" referencedTableName="RegistroCadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-148">
+        <createIndex indexName="IXFK_InspeccionVehiculos_c_catalogos" tableName="InspeccionVehiculos">
+            <column name="cveTipoVehiculo"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-149">
+        <createIndex indexName="IXFK_InspeccionVehiculos_c_catalogos_02" tableName="InspeccionVehiculos">
+            <column name="cveMarca"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-150">
+        <createIndex indexName="IXFK_InspeccionVehiculos_c_catalogos_03" tableName="InspeccionVehiculos">
+            <column name="cveSubmarca"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-151">
+        <createIndex indexName="IXFK_InspeccionVehiculos_c_catalogos_04" tableName="InspeccionVehiculos">
+            <column name="cveModelo"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-152">
+        <createIndex indexName="IXFK_InspeccionVehiculos_c_catalogos_05" tableName="InspeccionVehiculos">
+            <column name="cveEntidadFederativa"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-153">
+        <createIndex indexName="IXFK_InspeccionVehiculos_RegistroCadenaCustodia" tableName="InspeccionVehiculos">
+            <column name="idRegistroCadenaCustodia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-154">
+        <addPrimaryKey columnNames="IdInspeccionVehiculo" constraintName="PK_InspeccionVehiculos" tableName="InspeccionVehiculos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-155">
+        <addForeignKeyConstraint baseColumnNames="IdCalificacion" baseTableName="Salida" constraintName="FK_Salida_CalifEventDet" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdCalificacion" referencedTableName="CalificacionEventoDetenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-156">
+        <addPrimaryKey columnNames="IdSalida" constraintName="PK_Salida" tableName="Salida"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-157">
+        <addPrimaryKey columnNames="IdAliasDetenido" constraintName="PK_AliasDetenido" tableName="AliasDetenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-158">
+        <addForeignKeyConstraint baseColumnNames="IdValoracion" baseTableName="RevisionMedica" constraintName="FK_RevisionMedica_ValoracionMedica" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdValoracion" referencedTableName="ValoracionMedica"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-159">
+        <addPrimaryKey columnNames="IdRevisionMedica" constraintName="PK_RevisionMedica" tableName="RevisionMedica"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-160">
+        <addForeignKeyConstraint baseColumnNames="idCadenaCustodia" baseTableName="ContinuidadCadenaCustodia" constraintName="FK_ContinuidadCadenaCustodia_CadenaCustodia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="idRegistroCadenaCustodia" referencedTableName="RegistroCadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-161">
+        <createIndex indexName="IXFK_ContinuidadCadenaCustodia_CadenaCustodia" tableName="ContinuidadCadenaCustodia">
+            <column name="idCadenaCustodia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-162">
+        <addPrimaryKey columnNames="idContinuidadCadenaCustodia" constraintName="PK_ContinuidadCadenaCustodia" tableName="ContinuidadCadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-163">
+        <createIndex indexName="IXIdUbicacion" tableName="Evento">
+            <column name="IdDomicilio"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-164">
+        <addForeignKeyConstraint baseColumnNames="IdInspeccionVehiculo" baseTableName="HallazgoVehiculos" constraintName="FK_HallazgoVehiculos_InspeccionVehiculos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdInspeccionVehiculo" referencedTableName="InspeccionVehiculos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-165">
+        <addForeignKeyConstraint baseColumnNames="IdPolicia" baseTableName="HallazgoVehiculos" constraintName="FK_HallazgoVehiculos_Personal" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdPersonal" referencedTableName="Personal"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-166">
+        <addPrimaryKey columnNames="IdHallazgoVehiculo" constraintName="PK_HallazgoVehiculos" tableName="HallazgoVehiculos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-167">
+        <addPrimaryKey columnNames="cveTipoDomicilio" constraintName="PK_c_tipoDomicilio" tableName="c_tipoDomicilio"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-168">
+        <addForeignKeyConstraint baseColumnNames="IdEvento" baseTableName="EventoDetenidos" constraintName="FK_EventoDetenidos_Evento" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdEvento" referencedTableName="Evento"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-169">
+        <createIndex indexName="IXFK_EventoDetenidos_catalogos" tableName="EventoDetenidos">
+            <column name="cveEstadoEventoDetenido"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-170">
+        <addPrimaryKey columnNames="IdEventoDetenidos" constraintName="PK_EventoDetenidos" tableName="EventoDetenidos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-171">
+        <addForeignKeyConstraint baseColumnNames="IdAcciones" baseTableName="Inspecciones" constraintName="FK_Inspecciones_AccionesRealizadas" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdAccionesRealizadas" referencedTableName="AccionesRealizadas"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-172">
+        <createIndex indexName="IXFK_Inspecciones_c_catalogos" tableName="Inspecciones">
+            <column name="cveTipoInspeccion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-173">
+        <addPrimaryKey columnNames="IdInspecciones" constraintName="PK_Inspecciones" tableName="Inspecciones"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-174">
+        <addForeignKeyConstraint baseColumnNames="IdRostro" baseTableName="Detenido" constraintName="FK_Detenido_Rostro" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdRostro" referencedTableName="Rostro"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-175">
+        <createIndex indexName="IXFK_Detenido_catalogos" tableName="Detenido">
+            <column name="cveGenero"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-176">
+        <createIndex indexName="IXFK_Detenido_catalogos_02" tableName="Detenido">
+            <column name="cveEstadoCivil"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-177">
+        <createIndex indexName="IXFK_Detenido_catalogos_03" tableName="Detenido">
+            <column name="cveCondicionEstadoCivil"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-178">
+        <createIndex indexName="IXFK_Detenido_catalogos_04" tableName="Detenido">
+            <column name="cveEscolaridad"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-179">
+        <createIndex indexName="IXFK_Detenido_catalogos_05" tableName="Detenido">
+            <column name="cveOcupacion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-180">
+        <createIndex indexName="IXFK_Detenido_catalogos_06" tableName="Detenido">
+            <column name="cveSueldoSemanal"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-181">
+        <createIndex indexName="IXFK_Detenido_catalogos_07" tableName="Detenido">
+            <column name="cveTipoIdentificacion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-182">
+        <createIndex indexName="IXFK_Detenido_Domicilio" tableName="Detenido">
+            <column name="IdLugarNacimiento"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-183">
+        <createIndex indexName="IXFK_Detenido_Domicilio_02" tableName="Detenido">
+            <column name="IdLugarResidencia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-184">
+        <createIndex indexName="IXIdHuellas" tableName="Detenido">
+            <column name="IdHuellas"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-185">
+        <createIndex indexName="IXIdRostro" tableName="Detenido">
+            <column name="IdRostro"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-186">
+        <addPrimaryKey columnNames="IdDetenido" constraintName="PK_Detenido" tableName="Detenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-187">
+        <addForeignKeyConstraint baseColumnNames="IdDetenido" baseTableName="MediaFiliacion" constraintName="FK_MediaFiliacion_Detenido" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDetenido" referencedTableName="Detenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-188">
+        <createIndex indexName="IXFK_MediaFiliacion_c_catalogos" tableName="MediaFiliacion">
+            <column name="cveCabelloColor"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-189">
+        <createIndex indexName="IXFK_MediaFiliacion_c_catalogos_02" tableName="MediaFiliacion">
+            <column name="cveCabelloForma"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-190">
+        <createIndex indexName="IXFK_MediaFiliacion_c_catalogos_03" tableName="MediaFiliacion">
+            <column name="cveCabelloTamano"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-191">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos" tableName="MediaFiliacion">
+            <column name="cveComplexion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-192">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_02" tableName="MediaFiliacion">
+            <column name="cveColorPiel"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-193">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_03" tableName="MediaFiliacion">
+            <column name="cveCara"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-194">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_04" tableName="MediaFiliacion">
+            <column name="cveTipoSangre"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-195">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_05" tableName="MediaFiliacion">
+            <column name="cveFactorRh"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-196">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_06" tableName="MediaFiliacion">
+            <column name="cveOjosTamano"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-197">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_07" tableName="MediaFiliacion">
+            <column name="cveOjosColor"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-198">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_08" tableName="MediaFiliacion">
+            <column name="cveOjosForma"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-199">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_09" tableName="MediaFiliacion">
+            <column name="cveBocaTamano"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-200">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_10" tableName="MediaFiliacion">
+            <column name="cveBocaComisua"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-201">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_11" tableName="MediaFiliacion">
+            <column name="cveBocaLabios"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-202">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_12" tableName="MediaFiliacion">
+            <column name="cveNariz"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-203">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_13" tableName="MediaFiliacion">
+            <column name="cveOreja"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-204">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_14" tableName="MediaFiliacion">
+            <column name="cveFrente"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-205">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_15" tableName="MediaFiliacion">
+            <column name="cveCejas"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-206">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_16" tableName="MediaFiliacion">
+            <column name="cveMenton"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-207">
+        <createIndex indexName="IXFK_MediaFiliacion_catalogos_17" tableName="MediaFiliacion">
+            <column name="cveCabello"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-208">
+        <addPrimaryKey columnNames="IdMediaFiliacion" constraintName="PK_MediaFiliacion" tableName="MediaFiliacion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-209">
+        <addForeignKeyConstraint baseColumnNames="IdDetenido" baseTableName="CorreoDetenido" constraintName="FK_CorreoDetenido_Detenido" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDetenido" referencedTableName="Detenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-210">
+        <createIndex indexName="IXIdCorreo" tableName="CorreoDetenido">
+            <column name="IdCorreo"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-211">
+        <addPrimaryKey columnNames="IdCorreoDetenido" constraintName="PK_CorreoDetenido" tableName="CorreoDetenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-212">
+        <createIndex indexName="IXFK_Correo_catalogos" tableName="Correo">
+            <column name="cveTipoCorreo"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-213">
+        <addPrimaryKey columnNames="IdCorreo" constraintName="PK_Correo" tableName="Correo"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-214">
+        <addPrimaryKey columnNames="idPersona" constraintName="PK_Persona" tableName="Persona"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-215">
+        <addForeignKeyConstraint baseColumnNames="IdPolicia" baseTableName="TestigosLugar" constraintName="FK_TestigosLugar_Personal" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdPersonal" referencedTableName="Personal"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-216">
+        <createIndex indexName="IXFK_TestigosLugar_c_catalogos" tableName="TestigosLugar">
+            <column name="cveTipoIdentificacion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-217">
+        <addPrimaryKey columnNames="IdTestigosLugar" constraintName="PK_TestigosLugar" tableName="TestigosLugar"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-218">
+        <addForeignKeyConstraint baseColumnNames="IdDenunciante" baseTableName="Acta" constraintName="FK_Acta_Denunciante" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDenunciante" referencedTableName="Denunciante"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-219">
+        <addForeignKeyConstraint baseColumnNames="IdInforme" baseTableName="Acta" constraintName="FK_Acta_Informe" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdInforme" referencedTableName="Informe"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-220">
+        <createIndex indexName="IXFK_Acta_c_catalogos" tableName="Acta">
+            <column name="cveTipoEvento"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-221">
+        <createIndex indexName="IXFK_Acta_c_catalogos_02" tableName="Acta">
+            <column name="cveMedioNotificacionNoticia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-222">
+        <createIndex indexName="IXFK_Acta_c_catalogos_03" tableName="Acta">
+            <column name="cveTipoDelitoReportado"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-223">
+        <createIndex indexName="IXFK_Acta_c_catalogos_04" tableName="Acta">
+            <column name="cveTipoDelitoReal"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-224">
+        <addPrimaryKey columnNames="IdActa" constraintName="PK_Acta" tableName="Acta"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-225">
+        <addForeignKeyConstraint baseColumnNames="IdExploracionFisica" baseTableName="Lesiones" constraintName="FK_Lesiones_ExploracionFisica" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdExploracionFisica" referencedTableName="ExploracionFisica"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-226">
+        <createIndex indexName="IXFK_Lesiones_catalogos" tableName="Lesiones">
+            <column name="IdTipo"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-227">
+        <createIndex indexName="IXIdExploracionFisica" tableName="Lesiones">
+            <column name="IdExploracionFisica"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-228">
+        <createIndex indexName="IXIdExploracionFisica" tableName="Tatuaje">
+            <column name="IdExploracionFisica"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-229">
+        <addPrimaryKey columnNames="IdLesiones" constraintName="PK_Lesiones" tableName="Lesiones"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-230">
+        <addForeignKeyConstraint baseColumnNames="IdTraslado" baseTableName="PoliciasTraslado" constraintName="FK_PoliciasTraslado_Traslado" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdTraslado" referencedTableName="Traslado"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-231">
+        <addPrimaryKey columnNames="IdPoliciaTraslado" constraintName="PK_PoliciasTraslado" tableName="PoliciasTraslado"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-232">
+        <addForeignKeyConstraint baseColumnNames="IdAcciones" baseTableName="EntregaRecepcionLugarHechos" constraintName="FK_EntregaRecepcionLugarHechos_AccionesRealizadas" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdAccionesRealizadas" referencedTableName="AccionesRealizadas"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-233">
+        <addPrimaryKey columnNames="IdEntregaRecepcionLugarHechos" constraintName="PK_EntregaRecepcionLugarHechos" tableName="EntregaRecepcionLugarHechos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-234">
+        <addForeignKeyConstraint baseColumnNames="idCadenaCustodia" baseTableName="DocumentacionObjetos" constraintName="FK_DocumentacionObjetos_CadenaCustodia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="idRegistroCadenaCustodia" referencedTableName="RegistroCadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-235">
+        <createIndex indexName="IXFK_DocumentacionObjetos_CadenaCustodia" tableName="DocumentacionObjetos">
+            <column name="idCadenaCustodia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-236">
+        <addPrimaryKey columnNames="idDocumentacionObjetos" constraintName="PK_DocumentacionObjetos" tableName="DocumentacionObjetos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-237">
+        <addForeignKeyConstraint baseColumnNames="IdCalificacion" baseTableName="Manifestacion" constraintName="FK_Manifestacion_CalificacionEventoDet" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdCalificacion" referencedTableName="CalificacionEventoDetenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-238">
+        <addPrimaryKey columnNames="IdManifestacion" constraintName="PK_Manifestacion" tableName="Manifestacion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-239">
+        <addForeignKeyConstraint baseColumnNames="IdAcciones" baseTableName="Priorizacion" constraintName="FK_Priorizacion_AccionesRealizadas" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdAccionesRealizadas" referencedTableName="AccionesRealizadas"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-240">
+        <createIndex indexName="IXFK_Priorizacion_c_catalogos" tableName="Priorizacion">
+            <column name="cveAutoridadAInformar"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-241">
+        <createIndex indexName="IXFK_Priorizacion_c_catalogos_02" tableName="Priorizacion">
+            <column name="cveMedioSeInforma"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-242">
+        <addPrimaryKey columnNames="IdPriorizacion" constraintName="PK_Priorizacion" tableName="Priorizacion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-243">
+        <addForeignKeyConstraint baseColumnNames="cveTipoDomicilio" baseTableName="Domicilio" constraintName="FK_cveTipoDomicilio_c_tipoDomicilio" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveTipoDomicilio" referencedTableName="c_tipoDomicilio"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-244">
+        <createIndex indexName="IXFK_Domicilio_c_colonia" tableName="Domicilio">
+            <column name="cveColonia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-245">
+        <createIndex indexName="IXFK_Domicilio_c_entidadFederativa" tableName="Domicilio">
+            <column name="cveEntidad"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-246">
+        <createIndex indexName="IXFK_Domicilio_c_municipio" tableName="Domicilio">
+            <column name="cveMunicipio"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-247">
+        <createIndex indexName="IXFK_Domicilio_c_pais" tableName="Domicilio">
+            <column name="cvePais"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-248">
+        <createIndex indexName="IXFK_Domicilio_c_tipoDomicilio" tableName="Domicilio">
+            <column name="cveTipoDomicilio"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-249">
+        <addForeignKeyConstraint baseColumnNames="IdCalificacion" baseTableName="Audiencia" constraintName="FK_Audiencia_CalificacionEventosDet" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdCalificacion" referencedTableName="CalificacionEventoDetenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-250">
+        <addPrimaryKey columnNames="IdAudiencia" constraintName="PK_Audiencia" tableName="Audiencia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-251">
+        <addForeignKeyConstraint baseColumnNames="IdAcciones" baseTableName="Auxilio" constraintName="FK_Auxilio_AccionesRealizadas" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdAccionesRealizadas" referencedTableName="AccionesRealizadas"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-252">
+        <createIndex indexName="IXFK_Auxilio_c_catalogos" tableName="Auxilio">
+            <column name="cveTipoAuxilio"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-253">
+        <addPrimaryKey columnNames="IdAuxilio" constraintName="PK_Auxilio" tableName="Auxilio"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-254">
+        <addForeignKeyConstraint baseColumnNames="IdActa" baseTableName="ActaPolicias" constraintName="FK_ActaPolicias_Acta" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdActa" referencedTableName="Acta"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-255">
+        <addForeignKeyConstraint baseColumnNames="IdPolicia" baseTableName="ActaPolicias" constraintName="FK_ActaPolicias_Personal" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdPersonal" referencedTableName="Personal"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-256">
+        <createIndex indexName="IXFK_ActaPolicias_c_catalogos" tableName="ActaPolicias">
+            <column name="cveRol"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-257">
+        <addPrimaryKey columnNames="IdActaPolicias" constraintName="PK_ActaPolicias" tableName="ActaPolicias"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-258">
+        <addForeignKeyConstraint baseColumnNames="IdActa" baseTableName="Documentacion" constraintName="FK_Documentacion_Acta" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdActa" referencedTableName="Acta"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-259">
+        <addPrimaryKey columnNames="IdDocumentacion" constraintName="PK_Documentacion" tableName="Documentacion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-260">
+        <addForeignKeyConstraint baseColumnNames="idCadenaCustodia" baseTableName="TrasladoObjetos" constraintName="FK_TrasladoObjetos_CadenaCustodia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="idRegistroCadenaCustodia" referencedTableName="RegistroCadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-261">
+        <createIndex indexName="IXFK_TrasladoObjetos_CadenaCustodia" tableName="TrasladoObjetos">
+            <column name="idCadenaCustodia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-262">
+        <addPrimaryKey columnNames="idTrasladoObjetos" constraintName="PK_TrasladoObjetos" tableName="TrasladoObjetos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-263">
+        <createIndex indexName="IXFK_Inspeccion_c_catalogos" tableName="Inspeccion">
+            <column name="cveTipoInspeccion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-264">
+        <addPrimaryKey columnNames="IdInspeccion" constraintName="PK_Inspeccion" tableName="Inspeccion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-265">
+        <addForeignKeyConstraint baseColumnNames="idCadenaCustodia" baseTableName="IdentidadObjetos" constraintName="FK_IdentidadObjetos_CadenaCustodia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="idRegistroCadenaCustodia" referencedTableName="RegistroCadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-266">
+        <createIndex indexName="IXFK_IdentidadObjetos_CadenaCustodia" tableName="IdentidadObjetos">
+            <column name="idCadenaCustodia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-267">
+        <addPrimaryKey columnNames="idIdentidadObjetos" constraintName="PK_IdentidadObjetos" tableName="IdentidadObjetos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-268">
+        <addUniqueConstraint columnNames="IdExploracionFisica" constraintName="FK_Tatuaje_ExploracionFisica" tableName="Tatuaje"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-269">
+        <addPrimaryKey columnNames="IdTatuaje" constraintName="PK_Tatuaje" tableName="Tatuaje"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-270">
+        <addForeignKeyConstraint baseColumnNames="IdActa" baseTableName="Detencion" constraintName="FK_Detencion_Acta" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdActa" referencedTableName="Acta"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-271">
+        <addPrimaryKey columnNames="IdDetencion" constraintName="PK_Detencion" tableName="Detencion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-272">
+        <createIndex indexName="IXFK_c_entidadFederativa_c_pais" tableName="c_entidadFederativa">
+            <column name="cvePais"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-273">
+        <addPrimaryKey columnNames="cve_entidad" constraintName="PK_c_entidadFederativa" tableName="c_entidadFederativa"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-274">
+        <addForeignKeyConstraint baseColumnNames="IdPolicia" baseTableName="HallazgoLugar" constraintName="FK_HallazgoLugar_Personal" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdPersonal" referencedTableName="Personal"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-275">
+        <addPrimaryKey columnNames="IdHallazgoLugar" constraintName="PK_HallazgoLugar" tableName="HallazgoLugar"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-276">
+        <createIndex indexName="IXFK_Huellas_catalogos" tableName="Huellas">
+            <column name="cveEstadoHuella"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-277">
+        <addPrimaryKey columnNames="IdHuellas" constraintName="PK_Huellas" tableName="Huellas"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-278">
+        <addForeignKeyConstraint baseColumnNames="IdAcciones" baseTableName="LugarIntervencion" constraintName="FK_LugarIntervencion_AccionesRealizadas" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdAccionesRealizadas" referencedTableName="AccionesRealizadas"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-279">
+        <createIndex indexName="IXFK_LugarIntervencion_c_catalogos" tableName="LugarIntervencion">
+            <column name="cveTipoLugarIntervencion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-280">
+        <addPrimaryKey columnNames="IdLugarIntervencion" constraintName="PK_LugarIntervencion" tableName="LugarIntervencion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-281">
+        <addForeignKeyConstraint baseColumnNames="IdPolicia" baseTableName="InspeccionLugares" constraintName="FK_InspeccionLugares_Personal" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdPersonal" referencedTableName="Personal"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-282">
+        <createIndex indexName="IXFK_InspeccionLugares_c_catalogos" tableName="InspeccionLugares">
+            <column name="cveTipoLugar"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-283">
+        <createIndex indexName="IXFK_InspeccionLugares_c_catalogos_02" tableName="InspeccionLugares">
+            <column name="cveTipoSuelo"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-284">
+        <createIndex indexName="IXFK_InspeccionLugares_c_catalogos_03" tableName="InspeccionLugares">
+            <column name="cveCondicionSuelo"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-285">
+        <createIndex indexName="IXFK_InspeccionLugares_c_catalogos_04" tableName="InspeccionLugares">
+            <column name="cveTipoClima"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-286">
+        <createIndex indexName="IXFK_InspeccionLugares_c_catalogos_05" tableName="InspeccionLugares">
+            <column name="cveTipoIluminacion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-287">
+        <addPrimaryKey columnNames="IdInspeccionLugare" constraintName="PK_InspeccionLugares" tableName="InspeccionLugares"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-288">
+        <addForeignKeyConstraint baseColumnNames="IdValoracion" baseTableName="AntecedentePatalogico" constraintName="FK_AntecedentePatalogico_ValoracionMedica" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdValoracion" referencedTableName="ValoracionMedica"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-289">
+        <addPrimaryKey columnNames="IdAntecedente" constraintName="PK_AntecedentePatalogico" tableName="AntecedentePatalogico"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-290">
+        <createIndex indexName="IXFK_Policia_catalogos" tableName="Policia">
+            <column name="cveCorporacion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-291">
+        <addPrimaryKey columnNames="IdPolicia" constraintName="PK_Policia" tableName="Policia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-292">
+        <addForeignKeyConstraint baseColumnNames="IdMediaFiliacion" baseTableName="MediaFiliacionAnexo" constraintName="FK_MediaFiliacionAnexo_MediaFiliacion" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdMediaFiliacion" referencedTableName="MediaFiliacion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-293">
+        <createIndex indexName="IXFK_MediaFiliacionAnexo_MediaFiliacion" tableName="MediaFiliacionAnexo">
+            <column name="IdMediaFiliacion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-294">
+        <addPrimaryKey columnNames="idMediaFiliacionAnexo" constraintName="PK_MediaFiliacionAnexo" tableName="MediaFiliacionAnexo"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-295">
+        <addPrimaryKey columnNames="cvePais" constraintName="PK_c_pais" tableName="c_pais"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-296">
+        <createIndex indexName="IXFK_Telefono_catalogos" tableName="Telefono">
+            <column name="cveTipoTelefono"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-297">
+        <createIndex indexName="IXFK_Telefono_Persona" tableName="Telefono">
+            <column name="idPersona"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-298">
+        <addPrimaryKey columnNames="IdTelefono" constraintName="PK_Telefono" tableName="Telefono"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-299">
+        <addPrimaryKey columnNames="IdTelefonoDetenido" constraintName="PK_TelefonoDetenido" tableName="TelefonoDetenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-300">
+        <addPrimaryKey columnNames="cveCDCatalogos" constraintName="PK_c_d_catalogos" tableName="c_d_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-301">
+        <addForeignKeyConstraint baseColumnNames="IdDetenido" baseTableName="ReferenciasPersonales" constraintName="FK_ReferanciasPersonales_Detenido" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDetenido" referencedTableName="Detenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-302">
+        <createIndex indexName="IXFK_ReferenciasPersonales_catalogos" tableName="ReferenciasPersonales">
+            <column name="cveTipoRelacion"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-303">
+        <addPrimaryKey columnNames="IdReferenciasPersonales" constraintName="PK_ReferenciasPersonales" tableName="ReferenciasPersonales"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-304">
+        <addForeignKeyConstraint baseColumnNames="cveEntidad" baseTableName="c_municipio" constraintName="FK_cveEntidad_c_entidadFederativa" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cve_entidad" referencedTableName="c_entidadFederativa"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-305">
+        <createIndex indexName="IXFK_c_municipio_c_entidadFederativa" tableName="c_municipio">
+            <column name="cveEntidad"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-306">
+        <addPrimaryKey columnNames="cve_municipio" constraintName="PK_c_municipio" tableName="c_municipio"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-307">
+        <addForeignKeyConstraint baseColumnNames="IdCalificacion" baseTableName="Resolucion" constraintName="FK_Resolucion_CalificacionEventoDet" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdCalificacion" referencedTableName="CalificacionEventoDetenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-308">
+        <addPrimaryKey columnNames="IdResolucion" constraintName="PK_Resolucion" tableName="Resolucion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-309">
+        <addForeignKeyConstraint baseColumnNames="cveMunicipio" baseTableName="c_colonia" constraintName="FK_cveMunicipio_c_municipio" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cve_municipio" referencedTableName="c_municipio"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-310">
+        <createIndex indexName="IXFK_c_colonia_c_municipio" tableName="c_colonia">
+            <column name="cveMunicipio"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-311">
+        <addPrimaryKey columnNames="cveColonia" constraintName="PK_c_colonia" tableName="c_colonia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-312">
+        <addForeignKeyConstraint baseColumnNames="cveCDCatalogos" baseTableName="c_catalogos" constraintName="FK_cveCDCatalogos_c_d_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCDCatalogos" referencedTableName="c_d_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-313">
+        <createIndex indexName="IXFK_c_catalogos_c_d_catalogos" tableName="c_catalogos">
+            <column name="cveCDCatalogos"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-314">
+        <addPrimaryKey columnNames="cveCatalogo" constraintName="PK_catalogos" tableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-315">
+        <addForeignKeyConstraint baseColumnNames="idCadenaCustodia" baseTableName="Recoleccion" constraintName="FK_Recoleccion_CadenaCustodia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="idRegistroCadenaCustodia" referencedTableName="RegistroCadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-316">
+        <createIndex indexName="IXFK_Recoleccion_CadenaCustodia" tableName="Recoleccion">
+            <column name="idCadenaCustodia"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-317">
+        <addPrimaryKey columnNames="idRecoleccion" constraintName="PK_Recoleccion" tableName="Recoleccion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-318">
+        <addForeignKeyConstraint baseColumnNames="IdLugarIntervencion" baseTableName="PersonasLugarIntervencion" constraintName="FK_PersonasLugarIntervencion_LugarIntervencion" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdLugarIntervencion" referencedTableName="LugarIntervencion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-319">
+        <addForeignKeyConstraint baseColumnNames="idCadenaCustodia" baseTableName="ServidoresPublicos" constraintName="FK_ServidoresPublicos_CadenaCustodia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="idRegistroCadenaCustodia" referencedTableName="RegistroCadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-320">
+        <addForeignKeyConstraint baseColumnNames="IdDetenido" baseTableName="InspeccionPersona" constraintName="FK_IdDetenido_Detenido" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDetenido" referencedTableName="Detenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-321">
+        <addForeignKeyConstraint baseColumnNames="IdRegistroCadenaCustodia" baseTableName="InspeccionPersona" constraintName="FK_InspeccionPersona_CadenaCustodia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdCadenaCustodia" referencedTableName="CadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-322">
+        <addForeignKeyConstraint baseColumnNames="IdInspeccion" baseTableName="InspeccionPersona" constraintName="FK_InspeccionPersona_Inspeccion" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdInspeccion" referencedTableName="Inspeccion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-323">
+        <addForeignKeyConstraint baseColumnNames="IdRegistroCadenaCustodia" baseTableName="InspeccionPersona" constraintName="FK_InspeccionPersona_RegistroCadenaCustodia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="idRegistroCadenaCustodia" referencedTableName="RegistroCadenaCustodia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-324">
+        <addForeignKeyConstraint baseColumnNames="IdPolicia" baseTableName="PrimerRespondiente" constraintName="FK_PrimerRespondiente_Personal" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdPersonal" referencedTableName="Personal"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-325">
+        <addForeignKeyConstraint baseColumnNames="IdPuestaDisposicion" baseTableName="PrimerRespondiente" constraintName="FK_PrimerRespondiente_PuestaDisposicion" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdPuestaDisposicion" referencedTableName="PuestaDisposicion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-326">
+        <addForeignKeyConstraint baseColumnNames="cveTipoTraslado" baseTableName="Traslado" constraintName="FK_cveTipoTraslado_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-327">
+        <addForeignKeyConstraint baseColumnNames="IdAuxilio" baseTableName="Traslado" constraintName="FK_Traslado_Auxilio" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdAuxilio" referencedTableName="Auxilio"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-328">
+        <addForeignKeyConstraint baseColumnNames="IdLugarTraslado" baseTableName="Traslado" constraintName="FK_Traslado_LugarTraslado" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdLugarTraslado" referencedTableName="LugarTraslado"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-329">
+        <addForeignKeyConstraint baseColumnNames="IdCalificacion" baseTableName="Pertenencia" constraintName="FK_Pertenencia_CalifEventDet" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdCalificacion" referencedTableName="CalificacionEventoDetenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-330">
+        <addForeignKeyConstraint baseColumnNames="cveTipoLugarTraslado" baseTableName="LugarTraslado" constraintName="FK_LugarTraslado_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-331">
+        <addForeignKeyConstraint baseColumnNames="IdDetenido" baseTableName="RegistroDetencion" constraintName="FK_RegistroDetencion_Detenido_IdDetenido" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDetenido" referencedTableName="Detenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-332">
+        <addForeignKeyConstraint baseColumnNames="IdActa" baseTableName="ApoyoPrimerRespondiente" constraintName="FK_ApoyoPrimerRespondiente_Acta" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdActa" referencedTableName="Acta"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-333">
+        <addForeignKeyConstraint baseColumnNames="IdEvento" baseTableName="CalificacionEventoDetenido" constraintName="FK_CalificacionEventoDet_Evento" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdEvento" referencedTableName="Evento"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-334">
+        <addForeignKeyConstraint baseColumnNames="IdDetenido" baseTableName="CalificacionEventoDetenido" constraintName="FK_CalificacionEventoDetenido_Detenido" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDetenido" referencedTableName="Detenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-335">
+        <addForeignKeyConstraint baseColumnNames="IdDetenido" baseTableName="ValoracionMedica" constraintName="FK_ValoracionMedica_Detenido" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDetenido" referencedTableName="Detenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-336">
+        <addForeignKeyConstraint baseColumnNames="IdEvento" baseTableName="ValoracionMedica" constraintName="FK_ValoracionMedica_Evento" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdEvento" referencedTableName="Evento"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-337">
+        <addForeignKeyConstraint baseColumnNames="IdDomicilio" baseTableName="Informe" constraintName="FK_IdDomicilio_Domicilio" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDomicilio" referencedTableName="Domicilio"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-338">
+        <addForeignKeyConstraint baseColumnNames="cveTipoObjeto" baseTableName="HallazgoPersona" constraintName="FK_cveTipoObjeto_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-339">
+        <addForeignKeyConstraint baseColumnNames="cveUnidadMedida" baseTableName="HallazgoPersona" constraintName="FK_cveUnidadMedida_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-340">
+        <addForeignKeyConstraint baseColumnNames="cveTipoAnexo" baseTableName="Anexos" constraintName="FK_Anexos_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-341">
+        <addForeignKeyConstraint baseColumnNames="IdDocumentacion" baseTableName="Anexos" constraintName="FK_Anexos_Documentacion" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDocumentacion" referencedTableName="Documentacion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-342">
+        <addForeignKeyConstraint baseColumnNames="IdActa" baseTableName="PuestaDisposicion" constraintName="FK_PuestaDisposicion_Acta" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdActa" referencedTableName="Acta"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-343">
+        <addForeignKeyConstraint baseColumnNames="IdEvento" baseTableName="EventoPolicias" constraintName="FK_EventoPolicias_Evento" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdEvento" referencedTableName="Evento"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-344">
+        <addForeignKeyConstraint baseColumnNames="IdPolicia" baseTableName="EventoPolicias" constraintName="FK_EventoPolicias_Policia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdPolicia" referencedTableName="Policia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-345">
+        <addForeignKeyConstraint baseColumnNames="IdActa" baseTableName="AccionesRealizadas" constraintName="FK_AccionesRealizadas_Acta" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdActa" referencedTableName="Acta"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-346">
+        <addForeignKeyConstraint baseColumnNames="cveTipoAccion" baseTableName="AccionesRealizadas" constraintName="FK_cveTipoAccion_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-347">
+        <addForeignKeyConstraint baseColumnNames="cveGrado" baseTableName="Personal" constraintName="FK_Personal_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-348">
+        <addForeignKeyConstraint baseColumnNames="cveTipo" baseTableName="Personal" constraintName="FK_Personal_c_catalogos_02" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-349">
+        <addForeignKeyConstraint baseColumnNames="IdPriorizacion" baseTableName="PoliciasPriorizacion" constraintName="FK_PersonasPriorizacion_Priorizacion" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdPriorizacion" referencedTableName="Priorizacion"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-350">
+        <addForeignKeyConstraint baseColumnNames="cveTipoIdentificacion" baseTableName="Denunciante" constraintName="FK_Denunciante_c_catalogos_cveTipoIdentificacion" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-351">
+        <addForeignKeyConstraint baseColumnNames="IdDomicilio" baseTableName="Denunciante" constraintName="FK_Denunciante_Domicilio_IdDomicilio" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDomicilio" referencedTableName="Domicilio"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-352">
+        <addForeignKeyConstraint baseColumnNames="cveEntidadFederativa" baseTableName="InspeccionVehiculos" constraintName="FK_cveEntidadFederativa_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-353">
+        <addForeignKeyConstraint baseColumnNames="cveMarca" baseTableName="InspeccionVehiculos" constraintName="FK_cveMarca_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-354">
+        <addForeignKeyConstraint baseColumnNames="cveModelo" baseTableName="InspeccionVehiculos" constraintName="FK_cveModelo_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-355">
+        <addForeignKeyConstraint baseColumnNames="cveSubmarca" baseTableName="InspeccionVehiculos" constraintName="FK_cveSubmarca_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-356">
+        <addForeignKeyConstraint baseColumnNames="cveTipoVehiculo" baseTableName="InspeccionVehiculos" constraintName="FK_cveTipoVehiculo_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-357">
+        <addForeignKeyConstraint baseColumnNames="IdDetenido" baseTableName="AliasDetenido" constraintName="FK_Detenido_AliasDetenido" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDetenido" referencedTableName="Detenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-358">
+        <addForeignKeyConstraint baseColumnNames="IdDomicilio" baseTableName="Evento" constraintName="FK_Evento_Domicilio" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDomicilio" referencedTableName="Domicilio"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-359">
+        <addForeignKeyConstraint baseColumnNames="cveEstadoEventoDetenido" baseTableName="EventoDetenidos" constraintName="FK_cveEstadoEventoDetenido_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-360">
+        <addForeignKeyConstraint baseColumnNames="IdDetenido" baseTableName="EventoDetenidos" constraintName="FK_EventoDetenidos_Detenido" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDetenido" referencedTableName="Detenido"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-361">
+        <addForeignKeyConstraint baseColumnNames="cveTipoInspeccion" baseTableName="Inspecciones" constraintName="FK_Inspecciones_c_catalogos_cveTipoInspeccion" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-362">
+        <addForeignKeyConstraint baseColumnNames="cveCondicionEstadoCivil" baseTableName="Detenido" constraintName="FK_cveCondicionEstadoCivil_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-363">
+        <addForeignKeyConstraint baseColumnNames="cveEscolaridad" baseTableName="Detenido" constraintName="FK_cveEscolaridad_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-364">
+        <addForeignKeyConstraint baseColumnNames="cveEstadoCivil" baseTableName="Detenido" constraintName="FK_cveEstadoCivil_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-365">
+        <addForeignKeyConstraint baseColumnNames="cveGenero" baseTableName="Detenido" constraintName="FK_cveGenero_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-366">
+        <addForeignKeyConstraint baseColumnNames="cveOcupacion" baseTableName="Detenido" constraintName="FK_cveOcupacion_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-367">
+        <addForeignKeyConstraint baseColumnNames="cveSueldoSemanal" baseTableName="Detenido" constraintName="FK_cveSueldoSemanal_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-368">
+        <addForeignKeyConstraint baseColumnNames="cveTipoIdentificacion" baseTableName="Detenido" constraintName="FK_cveTipoIdentificaciono_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-369">
+        <addForeignKeyConstraint baseColumnNames="IdLugarNacimiento" baseTableName="Detenido" constraintName="FK_Detenido_Domicilio_Nac" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDomicilio" referencedTableName="Domicilio"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-370">
+        <addForeignKeyConstraint baseColumnNames="IdLugarResidencia" baseTableName="Detenido" constraintName="FK_Detenido_Domicilio_Res" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdDomicilio" referencedTableName="Domicilio"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-371">
+        <addForeignKeyConstraint baseColumnNames="IdHuellas" baseTableName="Detenido" constraintName="FK_Huellas_Detenido" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdHuellas" referencedTableName="Huellas"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-372">
+        <addForeignKeyConstraint baseColumnNames="cveBocaComisua" baseTableName="MediaFiliacion" constraintName="FK_cveBocaComisua_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-373">
+        <addForeignKeyConstraint baseColumnNames="cveBocaLabios" baseTableName="MediaFiliacion" constraintName="FK_cveBocaLabios_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-374">
+        <addForeignKeyConstraint baseColumnNames="cveBocaTamano" baseTableName="MediaFiliacion" constraintName="FK_cveBocaTamano_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-375">
+        <addForeignKeyConstraint baseColumnNames="cveCabello" baseTableName="MediaFiliacion" constraintName="FK_cveCabello_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-376">
+        <addForeignKeyConstraint baseColumnNames="cveCabelloColor" baseTableName="MediaFiliacion" constraintName="FK_cveCabelloColor_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-377">
+        <addForeignKeyConstraint baseColumnNames="cveCabelloForma" baseTableName="MediaFiliacion" constraintName="FK_cveCabelloForma_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-378">
+        <addForeignKeyConstraint baseColumnNames="cveCabelloTamano" baseTableName="MediaFiliacion" constraintName="FK_cveCabelloTamano_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-379">
+        <addForeignKeyConstraint baseColumnNames="cveCara" baseTableName="MediaFiliacion" constraintName="FK_cveCara_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-380">
+        <addForeignKeyConstraint baseColumnNames="cveCejas" baseTableName="MediaFiliacion" constraintName="FK_cveCejas_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-381">
+        <addForeignKeyConstraint baseColumnNames="cveColorPiel" baseTableName="MediaFiliacion" constraintName="FK_cveColorPiel_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-382">
+        <addForeignKeyConstraint baseColumnNames="cveComplexion" baseTableName="MediaFiliacion" constraintName="FK_cveComplexion_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-383">
+        <addForeignKeyConstraint baseColumnNames="cveFactorRh" baseTableName="MediaFiliacion" constraintName="FK_cveFactorRh_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-384">
+        <addForeignKeyConstraint baseColumnNames="cveFrente" baseTableName="MediaFiliacion" constraintName="FK_cveFrente_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-385">
+        <addForeignKeyConstraint baseColumnNames="cveMenton" baseTableName="MediaFiliacion" constraintName="FK_cveMenton_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-386">
+        <addForeignKeyConstraint baseColumnNames="cveNariz" baseTableName="MediaFiliacion" constraintName="FK_cveNariz_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-387">
+        <addForeignKeyConstraint baseColumnNames="cveOjosColor" baseTableName="MediaFiliacion" constraintName="FK_cveOjosColor_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-388">
+        <addForeignKeyConstraint baseColumnNames="cveOjosForma" baseTableName="MediaFiliacion" constraintName="FK_cveOjosForma_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-389">
+        <addForeignKeyConstraint baseColumnNames="cveOjosTamano" baseTableName="MediaFiliacion" constraintName="FK_cveOjosTamano_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-390">
+        <addForeignKeyConstraint baseColumnNames="cveOreja" baseTableName="MediaFiliacion" constraintName="FK_cveOreja_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-391">
+        <addForeignKeyConstraint baseColumnNames="cveTipoSangre" baseTableName="MediaFiliacion" constraintName="FK_cveTipoSangre_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-392">
+        <addForeignKeyConstraint baseColumnNames="IdCorreo" baseTableName="CorreoDetenido" constraintName="FK_CorreoDetenido_Correo" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdCorreo" referencedTableName="Correo"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-393">
+        <addForeignKeyConstraint baseColumnNames="cveTipoCorreo" baseTableName="Correo" constraintName="FK_cveTipoCorreo_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-394">
+        <addForeignKeyConstraint baseColumnNames="cveTipoIdentificacion" baseTableName="TestigosLugar" constraintName="FK_cveTipoIdentificacion_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-395">
+        <addForeignKeyConstraint baseColumnNames="IdInspeccionLugar" baseTableName="TestigosLugar" constraintName="FK_TestigosLugar_InspeccionLugares" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdInspeccionLugare" referencedTableName="InspeccionLugares"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-396">
+        <addForeignKeyConstraint baseColumnNames="cveMedioNotificacionNoticia" baseTableName="Acta" constraintName="FK_cveMedioNotificacionNoticia_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-397">
+        <addForeignKeyConstraint baseColumnNames="cveTipoDelitoReal" baseTableName="Acta" constraintName="FK_cveTipoDelitoReal_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-398">
+        <addForeignKeyConstraint baseColumnNames="cveTipoDelitoReportado" baseTableName="Acta" constraintName="FK_cveTipoDelitoReportado_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-399">
+        <addForeignKeyConstraint baseColumnNames="cveTipoEvento" baseTableName="Acta" constraintName="FK_cveTipoEvento_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-400">
+        <addForeignKeyConstraint baseColumnNames="cveAutoridadAInformar" baseTableName="Priorizacion" constraintName="FK_cveAutoridadAInformar_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-401">
+        <addForeignKeyConstraint baseColumnNames="cveMedioSeInforma" baseTableName="Priorizacion" constraintName="FK_cveMedioSeInforma_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-402">
+        <addForeignKeyConstraint baseColumnNames="cveColonia" baseTableName="Domicilio" constraintName="FK_cveColonia_c_colonia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveColonia" referencedTableName="c_colonia"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-403">
+        <addForeignKeyConstraint baseColumnNames="cveEntidad" baseTableName="Domicilio" constraintName="FK_Domicilio_c_entidadFederativa_cveEntidad" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cve_entidad" referencedTableName="c_entidadFederativa"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-404">
+        <addForeignKeyConstraint baseColumnNames="cveMunicipio" baseTableName="Domicilio" constraintName="FK_Domicilio_c_municipio_cveMunicipio" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cve_municipio" referencedTableName="c_municipio"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-405">
+        <addForeignKeyConstraint baseColumnNames="cvePais" baseTableName="Domicilio" constraintName="FK_Domicilio_c_pais_cvePais" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cvePais" referencedTableName="c_pais"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-406">
+        <addForeignKeyConstraint baseColumnNames="cveTipoAuxilio" baseTableName="Auxilio" constraintName="FK_cveTipoAuxilio_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-407">
+        <addForeignKeyConstraint baseColumnNames="cveRol" baseTableName="ActaPolicias" constraintName="FK_cveRol_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-408">
+        <addForeignKeyConstraint baseColumnNames="cveTipoInspeccion" baseTableName="Inspeccion" constraintName="FK_cveTipoInspeccion_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-409">
+        <addForeignKeyConstraint baseColumnNames="cvePais" baseTableName="c_entidadFederativa" constraintName="FK_cvePais_c_pais" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cvePais" referencedTableName="c_pais"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-410">
+        <addForeignKeyConstraint baseColumnNames="IdInspeccionLugar" baseTableName="HallazgoLugar" constraintName="FK_HallazgoLugar_InspeccionLugares" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="IdInspeccionLugare" referencedTableName="InspeccionLugares"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-411">
+        <addForeignKeyConstraint baseColumnNames="cveEstadoHuella" baseTableName="Huellas" constraintName="FK_cveEstadoHuella_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-412">
+        <addForeignKeyConstraint baseColumnNames="cveTipoLugarIntervencion" baseTableName="LugarIntervencion" constraintName="FK_LugarIntervencion_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-413">
+        <addForeignKeyConstraint baseColumnNames="cveCondicionSuelo" baseTableName="InspeccionLugares" constraintName="FK_cveCondicionSuelo_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-414">
+        <addForeignKeyConstraint baseColumnNames="cveTipoClima" baseTableName="InspeccionLugares" constraintName="FK_cveTipoClima_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-415">
+        <addForeignKeyConstraint baseColumnNames="cveTipoIluminacion" baseTableName="InspeccionLugares" constraintName="FK_cveTipoIluminacion_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-416">
+        <addForeignKeyConstraint baseColumnNames="cveTipoLugar" baseTableName="InspeccionLugares" constraintName="FK_cveTipoLugar_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-417">
+        <addForeignKeyConstraint baseColumnNames="cveTipoSuelo" baseTableName="InspeccionLugares" constraintName="FK_cveTipoSuelo_c_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-418">
+        <addForeignKeyConstraint baseColumnNames="cveCorporacion" baseTableName="Policia" constraintName="FK_cveCorporacion_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-419">
+        <addForeignKeyConstraint baseColumnNames="cveTipoTelefono" baseTableName="Telefono" constraintName="FK_cveTipoTelefono_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="1490638945289-420">
+        <addForeignKeyConstraint baseColumnNames="cveTipoRelacion" baseTableName="ReferenciasPersonales" constraintName="FK_cveTipoRelacion_catalogos" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="cveCatalogo" referencedTableName="c_catalogos"/>
+    </changeSet>
+</databaseChangeLog>
