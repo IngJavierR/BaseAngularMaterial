@@ -5,4 +5,14 @@
           <column name="idMegaMatcher" type="varchar(30)"/>
       </addColumn>
     </changeSet>
+    <changeSet author="frodriguez (generated)" id="2">
+      <addColumn tableName="detenido">
+          <column name="apodo" type="varchar(100)"/>
+      </addColumn>
+    </changeSet>
+    <changeSet author="frodriguez (generated)" id="3">
+      <addColumn tableName="detenido">
+          <column name="altura" type="int"/>
+      </addColumn>
+    </changeSet>
 </databaseChangeLog>
